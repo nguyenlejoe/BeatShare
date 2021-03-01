@@ -1,9 +1,9 @@
 import React from 'react';
 import NavBar from "../../comps/NavBar";
 
-const Account = () => {
+const Post = () => {
     return (
-        <div className="Account">
+        <div className="Post">
 
             <div className="Nav">
                 <NavBar />
@@ -12,4 +12,4 @@ const Account = () => {
     );
 }
 
-export default Account;
+export default Post;
