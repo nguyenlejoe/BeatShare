@@ -17,7 +17,7 @@ width:100%;
 height:79px;
 background-color:#282828;
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
 `;
 
