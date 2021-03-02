@@ -95,4 +95,5 @@ const NavBar = ({ focused, display }) => {
     );
 }
 
+
 export default NavBar;
