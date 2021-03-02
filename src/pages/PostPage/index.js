@@ -1,7 +1,7 @@
 import React from 'react';
 import NavBar from "../../comps/NavBar";
 
-const Account = () => {
+const Post = () => {
     return (
         <div className="Main">
 
@@ -12,4 +12,4 @@ const Account = () => {
     );
 }
 
-export default Account;
+export default Post;
