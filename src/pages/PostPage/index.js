@@ -1,9 +1,7 @@
 import React from 'react';
 import NavBar from "../../comps/NavBar";
 
-import "./home.scss";
-
-const Home = () => {
+const Post = () => {
     return (
         <div className="Main">
 
@@ -14,4 +12,4 @@ const Home = () => {
     );
 }
 
-export default Home;
+export default Post;
