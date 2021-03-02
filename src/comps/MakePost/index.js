@@ -1,9 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Input from "../Input";
+import TextArea from "../TextArea";
+
 // Images
 import AlbumDefault from '../../images/addpost.png';
 
+const Container = styled.div`
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+`
 
 const AlbumCover = styled.div`
 width:320px;
@@ -23,10 +32,14 @@ border-radius:7px;
 const MakePost = ({img}) =>{
 
     return(
-        <div>
+        <Container>
             <AlbumCover img={img}/>
+            <Input text="Song Title"/>
+            <Input text="Artist Name"/>
+            <TextArea text="Say something about it..."/>
+            
 
-        </div>
+        </Container>
     );
 }
 

@@ -19,6 +19,8 @@ background-color:#282828;
 display:flex;
 justify-content:center;
 align-items:center;
+border-radius:4px;
+box-shadow: inset -1px -3px 10px -1px rgba(255, 255, 255, 0.3), inset 4px 4px 4px #000000;
 `;
 
 const Tab = styled.div`
