@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.scss';
 import Home from './pages/HomePage';
 import {
@@ -11,11 +10,13 @@ import {
 
 function App() {
   return (
-    <Router>
-      <Switch>
-      <Route path="/" exact component={Home}/>
-      </Switch>
-    </Router>
+    <div className="App">
+      <Router>
+        <Switch>
+        <Route path="/" exact component={Home}/>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 

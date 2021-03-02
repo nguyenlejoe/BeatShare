@@ -13,7 +13,7 @@ const NavBar = () => {
     );
 }
 
-defaultProps.NavBar = {
+NavBar.defaultProps = {
 
 }
 
