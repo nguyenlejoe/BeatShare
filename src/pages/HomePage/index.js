@@ -5,7 +5,7 @@ import "./home.scss";
 
 const Home = () => {
     return (
-        <div className="Home">
+        <div className="Main">
 
             <div className="Nav">
                 <NavBar />

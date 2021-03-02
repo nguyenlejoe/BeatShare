@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 
@@ -31,40 +31,63 @@ align-items:center;
 `;
 
 const NavLink = styled(Link)`
+text-decoration:none;
+&:hover{
+    opacity: 75%;
+    transition: opacity, 0.5s;
+}
 `;
 
 const Icon = styled.img`
 height:25px;
 width:22.7px;
-display:${props=>props.display ? props.display : "flex"}
 `;
 
-const NavBar = ({ display }) => {
+const NavBar = ({ focused, display }) => {
     
     const [selected, setSelected] = useState(0);
+
+    const pageNumber = () => {
+        setSelected(focused);
+    }
+
+    useEffect(()=>{
+        pageNumber()
+    },[]);
 
     return (
         <NavCont>
             <NavLink to="/">
                 <Tab>
-                    <Icon src={HomeBtn} display={selected === 0 ? "none" : "flex"}/>
-                    <Icon src={HomeSelect} display={selected === 0 ? "flex" : "none"}/>
+                    <Icon src={HomeBtn} style={{display: selected == 1 ? "none" : "flex"}} onClick={()=>{
+                        setSelected(1)
+                    }}/>
+                    <Icon src={HomeSelect} style={{display: selected == 1 ? "flex" : "none"}} onClick={()=>{
+                        setSelected(1)
+                    }}/>
                     Home
                 </Tab>
             </NavLink>
             
             <NavLink to="/PostPage">
                 <Tab>
-                    <Icon src={PostBtn} display={selected === 1 ? "none" : "flex"}/>
-                    <Icon src={PostSelect} display={selected === 1 ? "flex" : "none"}/>           
+                    <Icon src={PostBtn} style={{display: selected == 2 ? "none" : "flex"}} onClick={()=>{
+                        setSelected(2)
+                    }}/>
+                    <Icon src={PostSelect} style={{display: selected == 2 ? "flex" : "none"}} onClick={()=>{
+                        setSelected(2)
+                    }}/>           
                     Post
                 </Tab>
             </NavLink>
 
             <NavLink to="/AccountPage">
                 <Tab>
-                    <Icon src={ProfileBtn} display={selected === 3 ? "none" : "flex"}/>
-                    <Icon src={ProfileSelect} display={selected === 3 ? "flex" : "none"}/>                 
+                    <Icon src={ProfileBtn} style={{display: selected == 3 ? "none" : "flex"}} onClick={()=>{
+                        setSelected(3)
+                    }}/>
+                    <Icon src={ProfileSelect} style={{display: selected == 3 ? "flex" : "none"}} onClick={()=>{
+                        setSelected(3)}}/>                 
                     Profile
                 </Tab>
             </NavLink>

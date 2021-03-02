@@ -3,7 +3,7 @@ import NavBar from "../../comps/NavBar";
 
 const Post = () => {
     return (
-        <div className="Post">
+        <div className="Main">
 
             <div className="Nav">
                 <NavBar />
