@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from "react";
-import logo from './logo.svg';
 import './App.scss';
 import Home from './pages/HomePage';
 import Account from './pages/AccountPage';
@@ -27,13 +26,16 @@ function App() {
 
 
   return (
-    <Router>
-      <Switch>
-      <Route path="/" exact component={Home}/>
-      <Route path="/AccountPage" exact component={Account}/>
-      <Route path="/PostPage" exact component={Post}/>
-      </Switch>
-    </Router>
+
+    <div className="App">
+      <Router>
+        <Switch>
+        <Route path="/" exact component={Home}/>
+        <Route path="/AccountPage" exact component={Account}/>
+        <Route path="/PostPage" exact component={Post}/>
+        </Switch>
+      </Router>
+    </div>
   );
 }
 
