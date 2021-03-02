@@ -7,6 +7,11 @@ import HomeBtn from "../../images/home.png";
 import PostBtn from "../../images/post.png";
 import ProfileBtn from "../../images/profile.png";
 
+// Images Selected
+import HomeSelect from "../../images/home_selected.png";
+import PostSelect from "../../images/post_selected.png";
+import ProfileSelect from "../../images/profile_selected.png";
+
 const NavCont = styled.div`
 width:100%;
 height:79px;
@@ -31,28 +36,35 @@ const NavLink = styled(Link)`
 const Icon = styled.img`
 height:25px;
 width:22.7px;
+display:${props=>props.display ? props.display : "flex"}
 `;
 
-const NavBar = () => {
+const NavBar = ({ display }) => {
+    
+    const [selected, setSelected] = useState(0);
+
     return (
         <NavCont>
             <NavLink to="/">
                 <Tab>
-                    <Icon src={HomeBtn} />
+                    <Icon src={HomeBtn} display={selected === 0 ? "none" : "flex"}/>
+                    <Icon src={HomeSelect} display={selected === 0 ? "flex" : "none"}/>
                     Home
                 </Tab>
             </NavLink>
             
             <NavLink to="/PostPage">
                 <Tab>
-                    <Icon src={PostBtn} />                    
+                    <Icon src={PostBtn} display={selected === 1 ? "none" : "flex"}/>
+                    <Icon src={PostSelect} display={selected === 1 ? "flex" : "none"}/>           
                     Post
                 </Tab>
             </NavLink>
 
             <NavLink to="/AccountPage">
                 <Tab>
-                    <Icon src={ProfileBtn} />                     
+                    <Icon src={ProfileBtn} display={selected === 3 ? "none" : "flex"}/>
+                    <Icon src={ProfileSelect} display={selected === 3 ? "flex" : "none"}/>                 
                     Profile
                 </Tab>
             </NavLink>
