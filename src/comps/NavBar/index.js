@@ -19,11 +19,13 @@ background-color:#282828;
 display:flex;
 justify-content:space-between;
 align-items:center;
+border-radius:4px;
+box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #171717;
 `;
 
 const Tab = styled.div`
-margin-left:35px;
-margin-right:35px;
+margin-left:50px;
+margin-right:50px;
 color:white;
 display:flex;
 flex-direction:column;
