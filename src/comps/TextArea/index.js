@@ -15,6 +15,7 @@ color:white;
 margin-top:20px;
 height:100px;
 width:300px;
+margin-bottom:20px;
 `;
 
 const TextArea = ({text}) =>{
