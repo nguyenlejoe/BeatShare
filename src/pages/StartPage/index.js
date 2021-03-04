@@ -3,7 +3,7 @@ import React from 'react';
 // Images
 import Logo from '../../images/BeatShareLogo.svg'
 
-import "./login.scss"
+import "./start.scss"
 
 
 

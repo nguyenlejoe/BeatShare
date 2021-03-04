@@ -4,6 +4,7 @@ import Home from './pages/HomePage';
 import Account from './pages/AccountPage';
 import Post from './pages/PostPage';
 import Start from './pages/StartPage';
+import Login from './pages/LoginPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -32,6 +33,9 @@ function App() {
       <Router>
         <Switch>
         <Route path="/StartPage" exact component={Start}/>
+        <Route path="/LoginPage" exact component={Login}/>
+
+        {/* Logged In */}
         <Route path="/" exact component={Home}/>
         <Route path="/AccountPage" exact component={Account}/>
         <Route path="/PostPage" exact component={Post}/>
