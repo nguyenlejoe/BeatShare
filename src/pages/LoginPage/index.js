@@ -1,5 +1,6 @@
 import React from 'react';
 import Input from '../../comps/Input';
+import Button from '../../comps/Button';
 
 // Images
 import Logo from '../../images/BeatShareLogo.svg'
@@ -20,6 +21,7 @@ const Login = () => {
                 Welcome Back!
                 <Input text="Username"/>
                 <input type="password" className='pass_input' placeholder='Password'/>
+                <Button text='Login'/>
             </div>
 
 
