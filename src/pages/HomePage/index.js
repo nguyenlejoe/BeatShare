@@ -1,6 +1,7 @@
 import React from 'react';
 import Post from '../../comps/Post';
 import NavBar from "../../comps/NavBar";
+
 import "./home.scss";
 
 const Home = () => {
