@@ -1,12 +1,24 @@
 import React from 'react';
 
-import "login.scss"
+// Images
+import Logo from '../../images/BeatShareLogo.svg'
+
+import "./login.scss"
+
 
 
 const Login = () => {
     return (
         <div className="Main">
-            <h1>BeatShare</h1>
+            <div className="Logo">
+                <img src={Logo}/>
+                <h1>BeatShare</h1>
+            </div>
+
+        <div className="Log_sign">
+            
+        </div>
+
 
 
       </div>
