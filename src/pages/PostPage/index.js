@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from "../../comps/NavBar";
 import MakePost from "../../comps/MakePost";
+import PostBtn from '../../comps/PostBtn';
 
 import './post.scss';
 
@@ -15,6 +16,9 @@ const Post = () => {
             </div>
             <div className="Post-info">
                 <MakePost />
+            </div>
+            <div className="Post-button">
+                <PostBtn/>
             </div>
 
             <div className="Nav">

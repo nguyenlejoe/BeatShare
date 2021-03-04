@@ -20,7 +20,7 @@ display:flex;
 justify-content:center;
 align-items:center;
 border-radius:4px;
-box-shadow: inset -1px -3px 10px -1px rgba(255, 255, 255, 0.3), inset 4px 4px 4px #000000;
+box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #171717;
 `;
 
 const Tab = styled.div`
