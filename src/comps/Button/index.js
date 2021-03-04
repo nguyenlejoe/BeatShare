@@ -12,7 +12,7 @@ align-items:center;
 justify-content:center;
 
 `
-const LogSignBtn = ({text}) =>{
+const Button = ({text}) =>{
 
     return(
         <Btn>
@@ -21,8 +21,8 @@ const LogSignBtn = ({text}) =>{
     );
 }
 
-LogSignBtn.defaultProps = {
+Button.defaultProps = {
 text: "this is a button"
 }
 
-export default LogSignBtn;
+export default Button;
