@@ -2,7 +2,7 @@ import React from 'react';
 import NavBar from "../../comps/NavBar";
 import PostBtn from "../../comps/PostBtn";
 import PFP from "../../comps/Pfp"
-import LogSignBtn from "../../comps/Signup/Login"
+import Button from "../../comps/Button"
 import MenuBtn from "../../images/menuBtn.svg"
 import BackBtn from "../../images/backBtn.svg"
 import Logo from "../../images/BeatShareLogo.svg"
@@ -17,9 +17,9 @@ const Account = () => {
             <br></br>
             <PFP />
             <br></br>
-            <LogSignBtn text="Log in"/>
+            <Button text="Log in"/>
             <br></br>
-            <LogSignBtn text="Sign up"/>
+            <Button text="Sign up"/>
             <br></br>
             <img src={MenuBtn} />
             <br></br>
