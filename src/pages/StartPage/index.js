@@ -7,7 +7,7 @@ import "./login.scss"
 
 
 
-const Login = () => {
+const Start = () => {
     return (
         <div className="Main">
             <div className="Logo">
@@ -16,7 +16,7 @@ const Login = () => {
             </div>
 
         <div className="Log_sign">
-            
+
         </div>
 
 
@@ -26,4 +26,4 @@ const Login = () => {
     );
 }
 
-export default Login;
+export default Start;

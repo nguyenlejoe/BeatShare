@@ -3,7 +3,7 @@ import './App.scss';
 import Home from './pages/HomePage';
 import Account from './pages/AccountPage';
 import Post from './pages/PostPage';
-import Login from './pages/LoginPage';
+import Start from './pages/StartPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -31,7 +31,7 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-        <Route path="/LoginPage" exact component={Login}/>
+        <Route path="/StartPage" exact component={Start}/>
         <Route path="/" exact component={Home}/>
         <Route path="/AccountPage" exact component={Account}/>
         <Route path="/PostPage" exact component={Post}/>
