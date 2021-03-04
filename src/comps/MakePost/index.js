@@ -23,10 +23,6 @@ background-position:center;
 background-repeat:no-repeat;
 margin:15px;
 border-radius:7px;
-&:hover{
-    width:310px;
-    height:310px;
-}
 `;
 
 const MakePost = ({img}) =>{
