@@ -6,10 +6,12 @@ import LogSignBtn from "../../comps/Signup/Login"
 import MenuBtn from "../../images/menuBtn.svg"
 import BackBtn from "../../images/backBtn.svg"
 import Logo from "../../images/BeatShareLogo.svg"
+import ProfileTop from "../../comps/ProfileTop"
 
 const Account = () => {
     return (
         <div className="Main">
+
             {/* Kai testing his comps  */}
             
             <br></br>
