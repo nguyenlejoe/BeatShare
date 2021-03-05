@@ -6,6 +6,8 @@ import Button from "../../comps/Button"
 import MenuBtn from "../../images/menuBtn.svg"
 import BackBtn from "../../images/backBtn.svg"
 import Logo from "../../images/BeatShareLogo.svg"
+import FillHeart from "../../images/filledHeart.svg"
+import EmptyHeart from "../../images/emptyHeart.svg"
 
 const Account = () => {
     return (
@@ -26,6 +28,10 @@ const Account = () => {
             <img src={BackBtn} />
             <br></br>
             <img src={Logo} />
+            <br></br>
+            <img src={FillHeart} />
+            <br></br>
+            <img src={EmptyHeart} />
 
             {/* end of kai testing his comps */}
             <div className="Nav">
