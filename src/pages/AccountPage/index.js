@@ -12,6 +12,7 @@ import EmptyHeart from "../../images/emptyHeart.svg"
 const Account = () => {
     return (
         <div className="Main">
+
             {/* Kai testing his comps  */}
             
             <br></br>
