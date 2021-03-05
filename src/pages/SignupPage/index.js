@@ -10,6 +10,9 @@ import "./signup.scss"
 
 
 const SignUp = () => {
+
+
+
     return (
         <div className="Main">
             <div className="Logo">
