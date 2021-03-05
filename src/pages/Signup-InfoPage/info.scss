@@ -5,20 +5,13 @@
     align-items: center;
 }
 
-.Logo{
-    margin-top:150px;
-    margin-bottom:150px;
-    align-content: center;
-    text-align: center;
-}
-
-.Log_sign{
+.questions{
     display:flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    margin-top: 330px;
 }
 
-.question{
-    margin:50px;
+.prompt{
+    margin-top: 10px;
 }
