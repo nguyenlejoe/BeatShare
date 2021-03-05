@@ -1,9 +1,7 @@
 import React from 'react';
-import Input from '../../comps/Input';
-import Button from '../../comps/Button';
+import Input from 'comps/Input';
+import Button from 'comps/Button';
 
-// Images
-import Logo from '../../images/BeatShareLogo.svg'
 
 import "./login.scss";
 
@@ -13,7 +11,7 @@ const Login = () => {
     return (
         <div className="Main">
             <div className="Logo">
-                <img src={Logo}/>
+                <img src="Logo.svg"/>
                 <h1>BeatShare</h1>
             </div>
 

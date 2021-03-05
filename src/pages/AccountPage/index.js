@@ -1,13 +1,9 @@
 import React from 'react';
-import NavBar from "../../comps/NavBar";
-import PostBtn from "../../comps/PostBtn";
-import PFP from "../../comps/Pfp"
-import Button from "../../comps/Button"
-import MenuBtn from "../../images/menuBtn.svg"
-import BackBtn from "../../images/backBtn.svg"
-import Logo from "../../images/BeatShareLogo.svg"
-import FillHeart from "../../images/filledHeart.svg"
-import EmptyHeart from "../../images/emptyHeart.svg"
+import NavBar from "comps/NavBar";
+import PostBtn from "comps/PostBtn";
+import PFP from "comps/Pfp"
+import Button from "comps/Button"
+
 
 const Account = () => {
     return (
@@ -24,15 +20,16 @@ const Account = () => {
             <br></br>
             <Button text="Sign up"/>
             <br></br>
-            <img src={MenuBtn} />
+            <img src="menuBtn.svg" />
             <br></br>
-            <img src={BackBtn} />
+            <img src="backBtn.svg" />
             <br></br>
-            <img src={Logo} />
+            <img src="Logo.svg"/>
             <br></br>
-            <img src={FillHeart} />
+            <img src="filledHeart.svg" />
             <br></br>
-            <img src={EmptyHeart} />
+            <img src="emptyHeart.svg" />
+            <br></br>
 
             {/* end of kai testing his comps */}
             <div className="Nav">

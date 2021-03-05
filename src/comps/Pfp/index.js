@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import cameraIcon from "../../images/camera.svg"
+
 
 const Cont = styled.div`
 display:flex;
@@ -22,7 +22,7 @@ const PFP = () =>{
 
     return(
         <Cont>
-           <Icon src={cameraIcon} />
+           <Icon src="camera.svg"/>
         </Cont>
     );
 }
