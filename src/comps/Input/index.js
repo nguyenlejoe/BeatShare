@@ -11,16 +11,16 @@ box-shadow: inset -0.5px -1px 4px rgba(255, 255, 255, 0.3), inset 4px 4px 4px #0
 border-radius: 27px;
 border-style:none;
 height:35px;
-width:83%;
+width:250px;
 padding:0 5% 0 5%;
 color:white;
 margin-top:10px;
 `;
 
-const Input = ({text}) =>{
+const Input = ({text, onChange}) =>{
 
     return(
-            <TextInput placeholder={text}/>
+            <TextInput placeholder={text} onChange={onChange}/>
     );
 }
 
