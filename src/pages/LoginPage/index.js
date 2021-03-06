@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 import Input from '../../comps/Input';
 import Button from '../../comps/Button';
@@ -12,9 +12,29 @@ import "./login.scss";
 
 // let token = null;
 
+
 const Login = () => {
+    const history = useHistory;
     const [un, setUn] = useState("");
     const [pass, setPass] = useState("");
+    const [showlogin, setShow] = useState(true)
+
+    const CheckStorage = async()=>{
+        var token = await sessionStorage.getItem("token");
+        if(token){
+            axios.defaults.headers.common['Authorization'] = token;
+            var resp = await axios.get("http://localhost:8080/verify")
+                console.log("verification", resp.data);
+                if(resp.data!=='expired'){
+                   
+                    // setShow(false)
+                    
+                    // After Login
+                    history.push("/HomePage");
+                }
+        }
+    }
+
     
     const Auth = async () => {
         var resp = await axios.post("http://localhost:8080/api/login",{
@@ -22,23 +42,16 @@ const Login = () => {
             password:pass //pass123
         });
         axios.defaults.headers.common['Authorization'] = resp.data
+        sessionStorage.setItem('token', resp.data);
 
         console.log("identifier/token", resp.data);
     }
 
-    // const Restricted = async() =>{
-    //     var resp2 = await axios.post("http://localhost:8080/api/restricted",{
-    //          itemname:"item 1"
-    //     },{
-    //         headers:{
-    //             'Authorization':`${token}`
-    //         }
-    //     });
-    //     console.log("restricted", resp2.data)
-    // }
+
 
 
     useEffect(()=>{
+        CheckStorage()
     },[])
 
     return (
@@ -53,7 +66,6 @@ const Login = () => {
                 <Input text="Username" onChange={(e)=>setUn(e.target.value)}/>
                 <input type="password" className='pass_input' placeholder='Password' onChange={(e)=>setPass(e.target.value)}/>
                 <Button text='Login' onClick={Auth}/>
-                {/* <Button text='Restricted' onClick={Restricted}/> */}
             </div>
 
 
