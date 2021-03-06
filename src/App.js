@@ -13,20 +13,17 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import axios from 'axios';
 
-import jwtDecode from "jwt-decode";
-import useLocalStorage from "react-use-localstorage";
 
 
 function App() {
 
-  const [token, setToken] = useLocalStorage("token");
-  const [user, setUser] = useState();
-
-  useEffect(() => {
-    const user = token ? jwtDecode(token) : null;
-    setUser(user);
-  }, [token]);
+  // const token = sessionStorage.getItem("token");
+  //   console.log(token)
+  //   if(token){
+  //       axios.defaults.headers.common['Authorization'] = token;
+  //   }
 
 
   return (
