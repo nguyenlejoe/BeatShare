@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from '../../comps/Button';
 
 // Images
 import Logo from '../../images/BeatShareLogo.svg'
@@ -16,7 +17,10 @@ const Start = () => {
             </div>
 
         <div className="Log_sign">
-
+            <p className="question">Already have an account?</p>
+            <Button text="Login"/>
+            <p className="question">New to BeatShare?</p>
+            <Button text="Sign Up"/>
         </div>
 
 

@@ -17,10 +17,10 @@ color:white;
 margin-top:10px;
 `;
 
-const Input = ({text}) =>{
+const Input = ({text, onChange}) =>{
 
     return(
-            <TextInput placeholder={text}/>
+            <TextInput placeholder={text} onChange={onChange}/>
     );
 }
 
