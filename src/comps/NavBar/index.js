@@ -17,7 +17,7 @@ width:100%;
 height:79px;
 background-color:#282828;
 display:flex;
-justify-content:center;
+justify-content:space-between;
 align-items:center;
 border-radius:4px;
 box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #171717;
