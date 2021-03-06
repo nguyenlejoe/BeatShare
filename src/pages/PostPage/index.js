@@ -3,7 +3,7 @@ import NavBar from "../../comps/NavBar";
 import MakePost from "../../comps/MakePost";
 import PostBtn from '../../comps/PostBtn';
 
-import './post.scss';
+import '../../App.scss';
 
 // Images
 import Back from '../../images/back.png';

@@ -8,7 +8,7 @@ import Button from '../../comps/Button';
 // Images
 import Logo from '../../images/BeatShareLogo.svg'
 
-import "./login.scss";
+import '../../App.scss';
 
 // let token = null;
 

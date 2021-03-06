@@ -4,7 +4,7 @@ import {useHistory} from 'react-router-dom';
 import Post from '../../comps/Post';
 import NavBar from "../../comps/NavBar";
 
-import "./home.scss";
+import '../../App.scss';
 
 const Home = () => {
     const history = useHistory;

@@ -8,6 +8,8 @@ import BackBtn from "../../images/backBtn.svg"
 import Logo from "../../images/BeatShareLogo.svg"
 import ProfileTop from "../../comps/ProfileTop"
 
+import '../../App.scss';
+
 const Account = () => {
     return (
         <div className="Main">
