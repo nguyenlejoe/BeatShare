@@ -5,6 +5,8 @@ import Post from '../../comps/Post';
 import NavBar from "../../comps/NavBar";
 import "../../App.scss";
 
+import '../../App.scss';
+
 
 const Home = () => {
     const history = useHistory;

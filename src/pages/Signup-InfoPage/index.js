@@ -7,7 +7,7 @@ import Button from '../../comps/Button';
 
 
 
-import "./info.scss"
+import '../../App.scss';
 
 
 

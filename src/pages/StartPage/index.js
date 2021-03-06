@@ -4,7 +4,7 @@ import Button from '../../comps/Button';
 // Images
 import Logo from '../../images/BeatShareLogo.svg'
 
-import "./start.scss"
+import '../../App.scss';
 
 
 
