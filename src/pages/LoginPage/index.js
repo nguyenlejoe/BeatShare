@@ -14,7 +14,7 @@ import '../../App.scss';
 
 
 const Login = () => {
-    const history = useHistory;
+    const history = useHistory();
     const [un, setUn] = useState("");
     const [pass, setPass] = useState("");
     const [showlogin, setShow] = useState(true)
@@ -23,14 +23,14 @@ const Login = () => {
         var token = await sessionStorage.getItem("token");
         if(token){
             axios.defaults.headers.common['Authorization'] = token;
-            var resp = await axios.get("http://localhost:8080/verify")
+            var resp = await axios.get("http://localhost:8080/api/authorize")
                 console.log("verification", resp.data);
-                if(resp.data!=='expired'){
-                   
-                    // setShow(false)
-                    
-                    // After Login
-                    history.push("/HomePage");
+                if(resp.data ==='no token sent to server' || resp.data === 'Invalid token'){
+                    console.log("No token")
+                    history.push("/LoginPage");
+                }else{
+                    console.log("No token")
+                    history.push("/");
                 }
         }
     }
@@ -41,11 +41,17 @@ const Login = () => {
             user_name:un, //hello
             password:pass //pass123
         });
-        axios.defaults.headers.common['Authorization'] = resp.data
-        sessionStorage.setItem('token', resp.data);
 
-        console.log("identifier/token", resp.data);
-    }
+        console.log(resp.data)
+        if(resp.data === "incorrect username" || resp.data === "incorrect password"){
+            console.log("failed to login")
+        }else{
+            axios.defaults.headers.common['Authorization'] = resp.data
+            sessionStorage.setItem('token', resp.data);
+            console.log("identifier/token", resp.data);
+            history.push("/")
+        }
+    }   
 
 
 

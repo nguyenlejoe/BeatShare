@@ -9,23 +9,21 @@ import '../../App.scss';
 
 
 const Home = () => {
-    const history = useHistory;
+    const history = useHistory();
     
     const CheckStorage = async()=>{
         var token = await sessionStorage.getItem("token");
         if(token){
             axios.defaults.headers.common['Authorization'] = token;
-            var resp = await axios.get("http://localhost:8080/verify")
+            var resp = await axios.get("http://localhost:8080/api/authorize")
                 console.log("verification", resp.data);
-                if(resp.data ==='expired'){
-                   
-                    // setShow(false)
-                    
-                    history.push("/StartPage");
-                } else {
-                    // GetData();
-                }
+                history.push("/");
+          
+        }else{
+            console.log("no token")
+            history.push("/LoginPage");
         }
+ 
     }
 
     useEffect(()=>{
