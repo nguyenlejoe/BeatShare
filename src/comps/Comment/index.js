@@ -1,6 +1,12 @@
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
 
+const Container = styled.div`
+width: 100%;
+
+
+`
+
 const CommentCont = styled.div`
     width: 100%;
     display:flex;
@@ -17,13 +23,16 @@ const CommentBox = styled.div`
 `
 
 
-const Comment = ({userName, userComment}) => {
+const Comment = ({comments}) => {
 
     return (
-        <CommentCont>
-            <UserCont><b>{userName}</b></UserCont>
-            <CommentBox> {userComment}</CommentBox>
-        </CommentCont>
+        <Container>
+           {comments && comments.map((o)=>
+            <CommentCont>
+                <UserCont><b>{o.user_name}</b></UserCont>
+                <CommentBox> {o.message}</CommentBox>
+            </CommentCont>)} 
+        </Container>
     );
 }
 

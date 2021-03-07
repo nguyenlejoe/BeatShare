@@ -20,20 +20,17 @@ const Login = () => {
     const [showlogin, setShow] = useState(true)
 
     const CheckStorage = async()=>{
-        var token = await sessionStorage.getItem("token");
-        if(token){
-            axios.defaults.headers.common['Authorization'] = token;
-            var resp = await axios.get("http://localhost:8080/api/authorize")
-                console.log("verification", resp.data);
-                if(resp.data ==='no token sent to server' || resp.data === 'Invalid token'){
-                    console.log("No token")
-                    history.push("/LoginPage");
-                }else{
-                    console.log("No token")
-                    history.push("/");
-                }
-        }
-    }
+        var resp = await axios.get("http://localhost:8080/api/authorize")
+        console.log(resp.data);
+            if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
+                history.push("/");
+                console.log("Good token")
+            }else{
+                history.push("/LoginPage");
+                console.log("Bad token")
+            }
+    
+    }   
 
     
     const Auth = async () => {
@@ -46,9 +43,12 @@ const Login = () => {
         if(resp.data === "incorrect username" || resp.data === "incorrect password"){
             console.log("failed to login")
         }else{
-            axios.defaults.headers.common['Authorization'] = resp.data
-            sessionStorage.setItem('token', resp.data);
-            console.log("identifier/token", resp.data);
+            const token = resp.data.accessToken;
+            sessionStorage.setItem('token', token);
+            axios.defaults.headers.common['Authorization'] = token
+            // axios.defaults.headers.common['Authorization'] = resp.data.accessToken
+            // sessionStorage.setItem('token', resp.data.accessToken);
+            // console.log("identifier/token", resp.data.accessToken);
             history.push("/")
         }
     }   

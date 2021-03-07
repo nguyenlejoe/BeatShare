@@ -9,13 +9,11 @@ const ImageCont = styled.div`
     justify-content:center;
 `;
 
-const ImageBox = styled.div`
-    width:92%;
-    height:92%;
-    background-image:url(/${props => props.postimg ? props.postimg : "null"});
-    background-size:cover;
-    background-position:center;
-    background-repeat:no-repeat;
+const ImageBox = styled.img`
+    width:93%;
+    height:93%;
+    // background-image:url(/${props => props.postimg ? props.postimg : "null"});
+    border-radius:10px;
     background-color:black;
 
 `;
@@ -25,13 +23,13 @@ const ImageBox = styled.div`
 const PostImg = ({img}) => {
     return (
         <ImageCont>
-            <ImageBox postimg={img}/>
+            <ImageBox onerror='this.src="sampelCover.png"' src={img}/>
         </ImageCont>
     );
 }
 
 PostImg.defaultProps = {
-
+  img:"sampelCover.png"
 }
 
 export default PostImg;

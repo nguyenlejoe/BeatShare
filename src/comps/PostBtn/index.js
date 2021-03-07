@@ -12,10 +12,10 @@ align-items:center;
 justify-content:center;
 margin-bottom:20px;
 `
-const PostBtn = () =>{
+const PostBtn = ({onClick}) =>{
 
     return(
-        <Btn>
+        <Btn onClick={onClick}>
            <p> Post </p>
         </Btn>
     );
