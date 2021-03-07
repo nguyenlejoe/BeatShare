@@ -24,8 +24,8 @@ box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #17171
 `;
 
 const Tab = styled.div`
-margin-left:50px;
-margin-right:50px;
+margin-left:30px;
+margin-right:30px;
 color:white;
 display:flex;
 flex-direction:column;
@@ -33,6 +33,9 @@ align-items:center;
 `;
 
 const NavLink = styled(Link)`
+display:flex;
+flex-direction:column;
+align-items:center;
 text-decoration:none;
 &:hover{
     opacity: 75%;
