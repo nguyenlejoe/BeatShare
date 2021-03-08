@@ -31,12 +31,12 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-        <Route path="/StartPage" exact component={Start}/>
+        <Route path="/" exact component={Start}/>
         <Route path="/LoginPage" exact component={Login}/>
         <Route path="/SignupPage" exact component={SignUp}/>
         <Route path="/Signup-InfoPage" exact component={Information}/>
         {/* Logged In */}
-        <Route path="/" exact component={Home}/>
+        <Route path="/HomePage" exact component={Home}/>
         <Route path="/AccountPage" exact component={Account}/>
         <Route path="/PostPage" exact component={Post}/>
         <Route exact path="/Post/Comments/:id">

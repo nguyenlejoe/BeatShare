@@ -62,7 +62,7 @@ const NavBar = ({ focused, display }) => {
 
     return (
         <NavCont>
-            <NavLink to="/">
+            <NavLink to="/HomePage">
                 <Tab>
                     <Icon src={HomeBtn} style={{display: selected == 1 ? "none" : "flex"}} onClick={()=>{
                         setSelected(1)

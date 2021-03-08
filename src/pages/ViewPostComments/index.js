@@ -42,15 +42,10 @@ const ViewPostComments = () => {
 
     return (
         <div className="PostComments">
-            {/* <PostTitle
-             user={post.user_name}
-             songArtist={post.song_artist}
-             songName={post.song_name}
-            /> */}
             <CommentCaption
                 userName={post.user_name}
                 postCaption={post.description}
-                onClick={()=>history.push('/')}
+                onClick={()=>history.push('/HomePage')}
             />
             <CommentInput
              onComment={PostComment}
