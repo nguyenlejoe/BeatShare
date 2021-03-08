@@ -12,10 +12,9 @@ const ImageCont = styled.div`
 const ImageBox = styled.img`
     width:93%;
     height:93%;
-    // background-image:url(/${props => props.postimg ? props.postimg : "null"});
-    border-radius:10px;
-    background-color:black;
-
+    background-image:url(/BeatShareLogo.svg);
+    background-repeat:no-repeat;
+    background-position:center;
 `;
 
 
@@ -23,7 +22,7 @@ const ImageBox = styled.img`
 const PostImg = ({img}) => {
     return (
         <ImageCont>
-            <ImageBox onerror='this.src="sampelCover.png"' src={img}/>
+            <ImageBox  src={img} alt = " " />
         </ImageCont>
     );
 }

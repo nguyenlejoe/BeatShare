@@ -2,20 +2,27 @@ import React, { useEffect, useState } from 'react';
 import "../../App.scss";
 import CommentInput from '../../comps/CommentInput';
 import Comment from '../../comps/Comment';
-import PostTitle from '../../comps/PostTitle';
+import CommentCaption from '../../comps/CommentCaption';
 import axios from 'axios';
 import {useParams, useHistory} from 'react-router-dom';
 
-const ViewPostComments = (props) => {
+const ViewPostComments = () => {
     
     const params = useParams();
-
+    const history = useHistory();
     const [comments, setComments] = useState([]);
-    const [post, setPost] = useState([]);
+    const [post, setPost] = useState("");
+
+  
+    const PostComment = async(comment) => {
+        let resp = await axios.post(`http://localhost:8080/api/comment/${params.id}`, {message:comment})
+        console.log(resp.data)
+        HandleComments()
+    }
 
     const HandlePost = async() => {
         let resp = await axios.get(`http://localhost:8080/api/posts/${params.id}`)
-        setPost(resp.data.posts)
+        setPost(resp.data[0])
         console.log(post)
     }
 
@@ -27,15 +34,27 @@ const ViewPostComments = (props) => {
     useEffect(()=>{
         HandleComments()
         HandlePost()
+
     },[])
+
+
 
 
     return (
         <div className="PostComments">
-            <PostTitle
-          
+            {/* <PostTitle
+             user={post.user_name}
+             songArtist={post.song_artist}
+             songName={post.song_name}
+            /> */}
+            <CommentCaption
+                userName={post.user_name}
+                postCaption={post.description}
+                onClick={()=>history.push('/')}
             />
-            <CommentInput/>
+            <CommentInput
+             onComment={PostComment}
+            />
             <Comment comments={comments}/>
         </div>
     )

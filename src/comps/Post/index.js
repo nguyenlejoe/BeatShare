@@ -82,9 +82,13 @@ const Post = ({posts}) => {
                 />
                 <CommentInput/>
                 <Comment/>
-                <Link style={{ textDecoration: 'none'}} to={{ pathname: "/Post/Comments/" + o.id, state: {o} }}>
-                    <AllComments>View all {o.commentCount} comments</AllComments>
-                </Link>
+                
+                    <AllComments>
+                    <Link style={{ textDecoration: 'none' , color: 'white'}} to={{ pathname: "/Post/Comments/" + o.id }}>
+                        View all {o.commentCount} comments
+                    </Link>
+                    </AllComments>
+                
                 <hr/>
             </PostCont>)}
         </Container>
