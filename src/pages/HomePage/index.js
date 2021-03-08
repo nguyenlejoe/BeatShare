@@ -15,7 +15,7 @@ const Home = () => {
         var resp = await axios.get("http://localhost:8080/api/authorize")
         console.log(resp.data);
             if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
-                history.push("/");
+                history.push("/HomePage");
                 console.log("Good token")
             }else{
                 history.push("/LoginPage");

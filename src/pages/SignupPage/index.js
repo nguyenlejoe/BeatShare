@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import Input from "../../comps/Input";
 import Button from '../../comps/Button';
-
+import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
 
 // Images
@@ -17,6 +17,7 @@ const SignUp = () => {
     const [img, setImg] = useState("");
     const [artist, setArtist] = useState("");
     const [song, setSong] = useState("");
+    const history = useHistory()
 
     const HandleRegister = async()=>{
         const resp = await axios.post("http://localhost:8080/api/create_user",{
@@ -26,7 +27,14 @@ const SignUp = () => {
             favourite_artist:artist,
             favourite_song:song
         })
+        
+        const token = resp.data.accessToken;
+        sessionStorage.setItem('token', token);
+        axios.defaults.headers.common['Authorization'] = "Bearer " + token
         console.log(resp);
+        history.push("/HomePage")
+        
+       
     }
 
 

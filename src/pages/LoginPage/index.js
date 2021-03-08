@@ -23,7 +23,7 @@ const Login = () => {
         var resp = await axios.get("http://localhost:8080/api/authorize")
         console.log(resp.data);
             if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
-                history.push("/");
+                history.push("/HomePage");
                 console.log("Good token")
             }else{
                 history.push("/LoginPage");
@@ -45,11 +45,8 @@ const Login = () => {
         }else{
             const token = resp.data.accessToken;
             sessionStorage.setItem('token', token);
-            axios.defaults.headers.common['Authorization'] = token
-            // axios.defaults.headers.common['Authorization'] = resp.data.accessToken
-            // sessionStorage.setItem('token', resp.data.accessToken);
-            // console.log("identifier/token", resp.data.accessToken);
-            history.push("/")
+            axios.defaults.headers.common['Authorization'] = "Bearer " + token
+            history.push("/HomePage")
         }
     }   
 
