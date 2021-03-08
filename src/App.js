@@ -6,6 +6,7 @@ import Post from './pages/PostPage';
 import Start from './pages/StartPage';
 import Login from './pages/LoginPage';
 import SignUp from './pages/SignupPage';
+import PostComments from './pages/ViewPostComments';
 import Information from './pages/Signup-InfoPage';
 import {
   BrowserRouter as Router,
@@ -19,11 +20,10 @@ import axios from 'axios';
 
 function App() {
 
-  // const token = sessionStorage.getItem("token");
-  //   console.log(token)
-  //   if(token){
-  //       axios.defaults.headers.common['Authorization'] = token;
-  //   }
+  const token = sessionStorage.getItem("token");
+    if(token){
+        axios.defaults.headers.common['Authorization'] = "Bearer " + token;
+    }
 
 
   return (
@@ -39,6 +39,9 @@ function App() {
         <Route path="/" exact component={Home}/>
         <Route path="/AccountPage" exact component={Account}/>
         <Route path="/PostPage" exact component={Post}/>
+        <Route exact path="/Post/Comments/:id">
+          <PostComments/>
+        </Route>
         </Switch>
       </Router>
     </div>

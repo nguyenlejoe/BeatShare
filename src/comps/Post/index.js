@@ -5,6 +5,7 @@ import PostImg from '../../comps/PostImg';
 import PostCaption from '../../comps/PostCaption';
 import CommentInput from '../../comps/CommentInput';
 import Comment from '../../comps/Comment';
+import {Link} from 'react-router-dom';
 
 const Container = styled.div`
     width:100%;
@@ -70,18 +71,24 @@ const Post = ({posts}) => {
                 <PostTitle
                     userProfileImage=""
                     user={o.user_name}
-                    songName={o.songName}
-                    songArtist={o.songArtist}
+                    songName={o.song_name}
+                    songArtist={o.song_artist}
                 />
                 <PostImg
-                    img={o.img_url}
+                    img={o.img_url} 
                 />
                 <PostCaption
                     caption={o.description}
                 />
                 <CommentInput/>
                 <Comment/>
-                <AllComments>View all {o.commentCount} comments</AllComments>
+                
+                    <AllComments>
+                    <Link style={{ textDecoration: 'none' , color: 'white'}} to={{ pathname: "/Post/Comments/" + o.id }}>
+                        View all {o.commentCount} comments
+                    </Link>
+                    </AllComments>
+                
                 <hr/>
             </PostCont>)}
         </Container>

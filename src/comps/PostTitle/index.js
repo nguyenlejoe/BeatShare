@@ -29,7 +29,7 @@ const PostTitle = ({user, songName, songArtist, userProfileImage}) => {
     return (
         <TitleCont>
             <Avatar bgimg={userProfileImage}/>
-            <Title>{user} posted <b>{songName}</b> by <b>{songArtist}</b></Title>
+            <Title>{user} posted about <b>{songName}</b> by <b>{songArtist}</b></Title>
         </TitleCont>
     );
 }

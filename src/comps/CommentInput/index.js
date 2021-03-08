@@ -39,13 +39,17 @@ const InputBox = styled.input`
 
 
 //unLikeHeart
-const CommentInput = ({}) => {
+const CommentInput = ({onComment}) => {
+
+    const [comment, setComment] = useState("")
 
     return (
         <CommentCont>
             <InputCont placeholder="leave a comment">
-                <InputBox type="text" placeholder="leave a comment"></InputBox>
-                <PostButton>post</PostButton>
+                <InputBox type="text" placeholder="leave a comment" onChange={(e)=>setComment(e.target.value)}></InputBox>
+                <PostButton onClick={()=>{
+                    onComment(comment)
+                }}>post</PostButton>
             </InputCont>
         </CommentCont>
     );

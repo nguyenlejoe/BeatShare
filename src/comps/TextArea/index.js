@@ -18,10 +18,10 @@ width:300px;
 margin-bottom:20px;
 `;
 
-const TextArea = ({text}) =>{
+const TextArea = ({text, onChange}) =>{
 
     return(
-            <TextField placeholder={text}/>
+            <TextField placeholder={text} onChange={onChange}/>
     );
 }
 
