@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import styled from 'styled-components';
-import PFP from "../../comps/Pfp"
+import PFP from "../../comps/Pfp";
 import { NavLink as Link } from 'react-router-dom';
 
 

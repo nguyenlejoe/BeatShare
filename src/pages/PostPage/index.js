@@ -4,6 +4,7 @@ import MakePost from "../../comps/MakePost";
 import PostBtn from '../../comps/PostBtn';
 import axios from 'axios';
 import '../../App.scss';
+import {Link} from 'react-router-dom';
 
 // Images
 import Back from '../../images/back.png';
@@ -24,7 +25,7 @@ const Post = () => {
     return (
         <div className="Main">
             <div className="Back">
-                <img src={Back} />
+                <Link to='/HomePage'><img src={Back} /></Link>
             </div>
             <div className="Post-info">
                 <MakePost 
