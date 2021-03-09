@@ -9,19 +9,18 @@ const ProfileTopBox = styled.div`
     flex-direction: column;
     position: absolute;
     width: 100%;
-    height: 600px;
+    height: 650px;
     justify-self: center;
-    background-color: #161616;
+    background-color: #171717;
     border-radius: 0px 0px 30px 30px;
     background: #2F2F2F;
-    box-shadow: inset 20px 20px 60px #282828,
-                inset -20px -20px 60px #363636;
+    box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #171717;
 `
 
 const TopHalf = styled.div`
     display: flex; 
     flex-direction: row;
-    position: relative;
+    // position: relative;
     width: 100%;
     height: 85%;
 `
@@ -31,8 +30,7 @@ const PfpButton = styled.div`
     flex-direction: column;
     width: 40%;
     height: 100%;
-    position: relative;
-    background-color: yellow;
+    // position: relative;
 `
 
 const UserDesc = styled.div`
@@ -40,8 +38,7 @@ const UserDesc = styled.div`
     flex-direction: column;
     width: 60%;
     height: 100%;
-    position: relative;
-    background: blue;
+    // position: relative;
 `
 
 const UserInfo = styled.div`
@@ -55,7 +52,7 @@ const ProfileTop = ({Username, Desc }) => {
         <ProfileTopBox>
             <TopHalf>
             <PfpButton>
-
+                <PFP />
             </PfpButton>
             <UserDesc>
                
