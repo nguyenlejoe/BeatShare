@@ -3,12 +3,15 @@ import styled from 'styled-components';
 import PFP from "../../comps/Pfp";
 import { NavLink as Link } from 'react-router-dom';
 
+// Images
+import FavArtist from '../../images/profile_selected.png';
+import FavSong from '../../images/eighthnote.png';
 
 const ProfileTopBox = styled.div`
     display: flex; 
     flex-direction: column;
     width: 100%;
-    height: 325px;
+    height: 365px;
     justify-self: center;
     background-color: #171717;
     border-radius: 0px 0px 30px 30px;
@@ -56,11 +59,31 @@ const Bio = styled.p`
 `;
 
 const UserInfo = styled.div`
-
+    display:flex;
+    justify-content:center;
 `
 
+const Favourites = styled.div`
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    padding:30px;
+`;
 
-const ProfileTop = ({user_name, description }) => {
+const IconInfo = styled.img`
+    width:22.7px;
+    height:27px;
+`;
+
+const InfoBig = styled.p`
+    font-size: 14px;
+`;
+
+const InfoSmall = styled.p`
+    font-size: 10px;
+`;
+
+const ProfileTop = ({user_name, description, favourite_artist, favourite_song }) => {
     
     return (
         <ProfileTopBox>
@@ -74,7 +97,17 @@ const ProfileTop = ({user_name, description }) => {
             </UserDesc>
             </TopHalf>
             <UserInfo>
+                <Favourites>
+                    <IconInfo src={FavArtist} />
+                    <InfoBig>{favourite_artist}</InfoBig>
+                    <InfoSmall>Favourite Artist</InfoSmall>
+                </Favourites>
 
+                <Favourites>
+                    <IconInfo src={FavSong} />
+                    <InfoBig>{favourite_song}</InfoBig>
+                    <InfoSmall>Favourite Song</InfoSmall>
+                </Favourites>
             </UserInfo>
         </ProfileTopBox>
     );
@@ -82,7 +115,9 @@ const ProfileTop = ({user_name, description }) => {
 
 ProfileTop.defaultProps = {
     user_name:"Username",
-    description:"Bio is going to be 255 characters, that gives users enoughs room to tell a little bit about themselves. Wow 255 characters is a lot, almost there, keep going, come on how much more do I have to write, im so close, what if I do the alphabet, abcdefjhijklmn"
+    description:"Bio is going to be 255 characters, that gives users enoughs room to tell a little bit about themselves. Wow 255 characters is a lot, almost there, keep going, come on how much more do I have to write, im so close, what if I do the alphabet, abcdefjhijklmn",
+    favourite_artist:"Artist Name",
+    favourite_song:"Song Name"
 }
 
 
