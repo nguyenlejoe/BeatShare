@@ -1,18 +1,33 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import NavBar from "../../comps/NavBar";
 import ProfileTop from "../../comps/ProfileTop"
 import MenuBtn from '../../images/menuBtn.svg';
 import ProfileMenu from '../../comps/ProfileMenu';
 
+import axios from 'axios';
 import '../../App.scss';
 
 const Account = () => {
-    const [show, setShow] = useState(true);
+    const [show, setShow] = useState(false);
+    const [user , setUser] = useState([]);
 
+
+    // Get single user
+    // const UserInfo = async() => {
+    //     var resp = await axios.get()
+    // }
+
+    useEffect(()=>{
+        // UserInfo()
+    },[])
 
     return (
         <div className="Main">
-            <img src={MenuBtn} className="menubtn" onClick={()=> setShow(!show)}/>
+
+            <div className="menubtn">
+                <img src={MenuBtn} onClick={()=> setShow(!show)}/>
+            </div>
+
 
             {show ? (
                             <div className='profile_menu'>
@@ -23,8 +38,9 @@ const Account = () => {
         }
 
 
-            
+
             <ProfileTop />
+            
             
             <div className="Nav">
                 <NavBar />
