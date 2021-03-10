@@ -7,9 +7,8 @@ import { NavLink as Link } from 'react-router-dom';
 const ProfileTopBox = styled.div`
     display: flex; 
     flex-direction: column;
-    position: absolute;
     width: 100%;
-    height: 650px;
+    height: 325px;
     justify-self: center;
     background-color: #171717;
     border-radius: 0px 0px 30px 30px;
@@ -22,14 +21,17 @@ const TopHalf = styled.div`
     flex-direction: row;
     // position: relative;
     width: 100%;
-    height: 85%;
+    height: 650px;
 `
 
 const PfpButton = styled.div`
     display: flex; 
     flex-direction: column;
+    justify-content:center;
+    align-items:center;
     width: 40%;
-    height: 100%;
+    height: 225px;
+    //background-color:blue;
     // position: relative;
 `
 
@@ -37,25 +39,38 @@ const UserDesc = styled.div`
     display: flex; 
     flex-direction: column;
     width: 60%;
-    height: 100%;
+    height: 225px;
+    //background-color:yellow;
     // position: relative;
 `
+
+const User = styled.h1`
+    padding-top:35px;
+    font-size:18px;
+`;
+
+const Bio = styled.p`
+    width: 90%;
+    padding-bottom:30px;
+    font-size:11px;
+`;
 
 const UserInfo = styled.div`
 
 `
 
 
-const ProfileTop = ({Username, Desc }) => {
+const ProfileTop = ({user_name, description }) => {
     
     return (
         <ProfileTopBox>
             <TopHalf>
             <PfpButton>
-                <PFP />
+                <PFP height='90px' width='90px'/>
             </PfpButton>
             <UserDesc>
-               
+               <User>{user_name}</User>
+               <Bio>{description}</Bio>
             </UserDesc>
             </TopHalf>
             <UserInfo>
@@ -66,7 +81,8 @@ const ProfileTop = ({Username, Desc }) => {
 }
 
 ProfileTop.defaultProps = {
-
+    user_name:"Username",
+    description:"Bio is going to be 255 characters, that gives users enoughs room to tell a little bit about themselves. Wow 255 characters is a lot, almost there, keep going, come on how much more do I have to write, im so close, what if I do the alphabet, abcdefjhijklmn"
 }
 
 
