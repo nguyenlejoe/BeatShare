@@ -16,7 +16,7 @@ const ProfileTopBox = styled.div`
     background-color: #171717;
     border-radius: 0px 0px 30px 30px;
     background: #2F2F2F;
-    box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #171717;
+    box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 0px 0px #171717;
 `
 
 const TopHalf = styled.div`

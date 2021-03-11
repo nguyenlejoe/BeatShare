@@ -43,32 +43,30 @@ text-decoration:none;
 }
 `;
 
-const Icon = styled.img`
+const Icon = styled.div`
 height:25px;
 width:22.7px;
+background-size:cover;
 `;
 
-const NavBar = ({ focused, display }) => {
+const NavBar = ({ display , select }) => {
     
-    const [selected, setSelected] = useState(0);
+    const [selected, setSelected] = useState();
 
     const pageNumber = () => {
-        setSelected(focused);
+        setSelected(select)
     }
 
     useEffect(()=>{
-        pageNumber()
-    },[]);
+        pageNumber(Tab)
+    },[Tab]);
 
     return (
         <NavCont>
             <NavLink to="/HomePage">
                 <Tab>
-                    <Icon src={HomeBtn} style={{display: selected == 1 ? "none" : "flex"}} onClick={()=>{
-                        setSelected(1)
-                    }}/>
-                    <Icon src={HomeSelect} style={{display: selected == 1 ? "flex" : "none"}} onClick={()=>{
-                        setSelected(1)
+                    <Icon name="home" style={{backgroundImage: selected == 0 ? "url("+ HomeSelect +")" : "url("+ HomeBtn +")"}} onClick={()=>{
+                        setSelected(0)
                     }}/>
                     Home
                 </Tab>
@@ -76,11 +74,8 @@ const NavBar = ({ focused, display }) => {
             
             <NavLink to="/PostPage">
                 <Tab>
-                    <Icon src={PostBtn} style={{display: selected == 2 ? "none" : "flex"}} onClick={()=>{
-                        setSelected(2)
-                    }}/>
-                    <Icon src={PostSelect} style={{display: selected == 2 ? "flex" : "none"}} onClick={()=>{
-                        setSelected(2)
+                    <Icon style={{backgroundImage: selected == 1 ? "url("+ PostSelect +")" : "url("+ PostBtn +")"}} onClick={()=>{
+                        setSelected(1)
                     }}/>           
                     Post
                 </Tab>
@@ -88,17 +83,18 @@ const NavBar = ({ focused, display }) => {
 
             <NavLink to="/AccountPage">
                 <Tab>
-                    <Icon src={ProfileBtn} style={{display: selected == 3 ? "none" : "flex"}} onClick={()=>{
-                        setSelected(3)
-                    }}/>
-                    <Icon src={ProfileSelect} style={{display: selected == 3 ? "flex" : "none"}} onClick={()=>{
-                        setSelected(3)}}/>                 
+                    
+                    <Icon style={{backgroundImage: selected == 2 ? "url("+ ProfileSelect +")" : "url("+ ProfileBtn +")"}} onClick={()=>{
+                        setSelected(2)
+                    }} />                 
                     Profile
                 </Tab>
             </NavLink>
         </NavCont>
     );
 }
+
+
 
 
 export default NavBar;
