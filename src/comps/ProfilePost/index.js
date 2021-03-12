@@ -13,6 +13,11 @@ const PostCont = styled.div`
 display:flex;
 `;
 
+const SinglePost = styled.div`
+display:flex;
+flex-direction:column;
+`;
+
 const Info = styled.p`
 font-size:12px;
 `;
@@ -36,9 +41,12 @@ const ProfilePost = ({posts}) => {
         <Container>
         {posts && posts.map(o=><PostCont> 
             
-            <PostImg width="150px" height="150px" img={o.img_url} borderRadius={"10px"}/>
-            <Info songName={o.song_name}></Info>
-            <Info songArtist={o.song_artist}></Info>
+            <SinglePost>
+                <PostImg width="150px" height="150px" img={o.img_url} borderRadius="7px"/>
+                <Info>{o.songName}</Info>
+                <Info>{o.songArtist}</Info>
+            </SinglePost>
+
             
             </PostCont>)}
 

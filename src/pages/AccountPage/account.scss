@@ -1,3 +1,12 @@
+.Profile_Main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1px;
+    padding-bottom: 350px;
+}
+
+
 .profile_menu{
     z-index:1;
     position: absolute;
@@ -15,3 +24,7 @@
     padding-bottom: 500px;
 }
 
+.profile_posts{
+    display: grid;
+    grid-template-columns: 150px 150px;
+}

@@ -31,7 +31,7 @@ const Account = () => {
     },[])
 
     return (
-        <div className="Main">
+        <div className="Profile_Main">
 
             <div className="menubtn">
                 <img src={MenuBtn} onClick={()=> setShow(!show)}/>

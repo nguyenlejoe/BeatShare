@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const ImageCont = styled.div`
     width: ${props=>props.width ? props.width : '100%'};
     height: ${props=>props.height ? props.height : '385px'};
-    border-radius: ${props=>props.borderRadius ? props.borderRadius : 'none'};
     display:flex;
     align-items:center;
     justify-content:center;
@@ -17,14 +16,15 @@ const ImageBox = styled.img`
     background-repeat:no-repeat;
     background-position:center;
     background-size:cover;
+    border-radius: ${props=>props.borderRadius ? props.borderRadius : 'none'};
 `;
 
 
 
 const PostImg = ({img, width, height, borderRadius}) => {
     return (
-        <ImageCont width={width} height={height} borderRadius={borderRadius}>
-            <ImageBox  src={img} alt = " " />
+        <ImageCont width={width} height={height} >
+            <ImageBox  src={img} alt = " " borderRadius={borderRadius}/>
         </ImageCont>
     );
 }
