@@ -3,6 +3,7 @@ import NavBar from "../../comps/NavBar";
 import ProfileTop from "../../comps/ProfileTop"
 import MenuBtn from '../../images/menuBtn.svg';
 import ProfileMenu from '../../comps/ProfileMenu';
+import ProfilePost from '../../comps/ProfilePost';
 
 import axios from 'axios';
 import '../../App.scss';
@@ -10,6 +11,7 @@ import '../../App.scss';
 const Account = () => {
     const [show, setShow] = useState(false);
     const [user , setUser] = useState([]);
+    const [posts, setPosts] = useState([])
 
 
     // Get single user
@@ -17,8 +19,15 @@ const Account = () => {
     //     var resp = await axios.get()
     // }
 
+    const GetPosts = async() => {
+        var resp = await axios.get("http://localhost:8080/api/posts")
+        setPosts(resp.data.posts)
+        console.log(posts);
+    }
+
     useEffect(()=>{
         // UserInfo()
+        GetPosts()
     },[])
 
     return (
@@ -40,6 +49,10 @@ const Account = () => {
 
 
             <ProfileTop />
+
+            <div className='profile_posts'>
+                <ProfilePost />
+            </div>
             
             
             <div className="Nav">
