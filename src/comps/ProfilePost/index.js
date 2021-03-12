@@ -9,6 +9,10 @@ height:180px;
 margin:10px;
 `
 
+const PostCont = styled.div`
+display:flex;
+`;
+
 const Info = styled.p`
 font-size:12px;
 `;
@@ -18,18 +22,25 @@ let fakeProfileposts = [
         img_url:"SPYAIR.jpg",
         songName:"イマジネーシヨン",
         songArtist:"SPYAIR"
+    },
+    {
+        id:2,
+        img_url:"twice.png",
+        songName:"YES or YES",
+        songArtist:"Twice"
     }
 ]
-const ProfilePost = ({posts, title, artist}) => {
+
+const ProfilePost = ({posts}) => {
     return(
         <Container>
-        {posts && posts.map(o=><div> 
+        {posts && posts.map(o=><PostCont> 
             
             <PostImg width="150px" height="150px" img={o.img_url} borderRadius={"10px"}/>
             <Info songName={o.song_name}></Info>
             <Info songArtist={o.song_artist}></Info>
             
-            </div>)}
+            </PostCont>)}
 
         </Container>
     )
