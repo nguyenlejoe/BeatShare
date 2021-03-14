@@ -14,6 +14,7 @@ grid-template-columns:150px 150px;
 align-items:center;
 margin-left:25%;
 margin-right:50%;
+padding-bottom:250px;
 `
 
 const PostCont = styled.div`
