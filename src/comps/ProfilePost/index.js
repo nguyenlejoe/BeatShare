@@ -1,5 +1,7 @@
 import React from 'react';
 import PostImg from '../../comps/PostImg';
+import SongName from '../../comps/ProfilePost/SongName';
+import SongArtist from '../../comps/ProfilePost/SongArtist';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -49,12 +51,13 @@ let fakeProfileposts = [
 const ProfilePost = ({posts}) => {
     return(
         <Container>
-        {posts && posts.map(o=><PostCont> 
+        {posts && posts.map(o=>
+        <PostCont> 
             
             <SinglePost>
                 <PostImg width="150px" height="150px" img={o.img_url} borderRadius="7px"/>
-                <Info songName={o.song_name}>{o.songName}</Info>
-                <Info songArtist={o.song_artist}>By {o.songArtist}</Info>
+                <SongName songName={o.song_name}></SongName>
+                <SongArtist songArtist={o.song_artist}/>
             </SinglePost>
 
             
@@ -65,9 +68,7 @@ const ProfilePost = ({posts}) => {
 }
 
 ProfilePost.defaultProps = {
-    posts:fakeProfileposts,
-    songName:"Song Name",
-    songArtist:"Song Artist"
+    posts:fakeProfileposts
 }
 
 export default ProfilePost;
