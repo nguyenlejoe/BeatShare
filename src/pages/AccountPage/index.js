@@ -51,7 +51,7 @@ const Account = () => {
             <ProfileTop />
 
             <div className='profile_posts'>
-                <ProfilePost />
+                <ProfilePost posts={posts}/>
             </div>
             
             
