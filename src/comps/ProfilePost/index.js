@@ -7,10 +7,14 @@ const Container = styled.div`
 width:150px;
 height:180px;
 margin:10px;
+display:grid;
+grid-template-columns:150px 150px;
+align-items:center;
+margin-left:25%;
+margin-right:50%;
 `
 
 const PostCont = styled.div`
-display:flex;
 `;
 
 const SinglePost = styled.div`
@@ -33,6 +37,12 @@ let fakeProfileposts = [
         img_url:"twice.png",
         songName:"YES or YES",
         songArtist:"Twice"
+    },
+    {
+        id:3,
+        img_url:"ep.jpeg",
+        songName:"Freaks and Geeks",
+        songArtist:"Childish Gambino"
     }
 ]
 
@@ -43,8 +53,8 @@ const ProfilePost = ({posts}) => {
             
             <SinglePost>
                 <PostImg width="150px" height="150px" img={o.img_url} borderRadius="7px"/>
-                <Info>{o.songName}</Info>
-                <Info>{o.songArtist}</Info>
+                <Info songName={o.song_name}>{o.songName}</Info>
+                <Info songArtist={o.song_artist}>By {o.songArtist}</Info>
             </SinglePost>
 
             
