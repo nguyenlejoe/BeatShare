@@ -30,6 +30,7 @@ color:white;
 display:flex;
 flex-direction:column;
 align-items:center;
+transition:color, 0.5s;
 `;
 
 const NavLink = styled(Link)`
@@ -47,6 +48,7 @@ const Icon = styled.div`
 height:25px;
 width:22.7px;
 background-size:cover;
+transition: background-image, 0.5s;
 `;
 
 const NavBar = ({ display , select }) => {
@@ -64,7 +66,7 @@ const NavBar = ({ display , select }) => {
     return (
         <NavCont>
             <NavLink to="/HomePage">
-                <Tab>
+                <Tab style={{color: selected == 0 ? '#ff2bde' : '#ffffff'}}>
                     <Icon name="home" style={{backgroundImage: selected == 0 ? "url("+ HomeSelect +")" : "url("+ HomeBtn +")"}} onClick={()=>{
                         setSelected(0)
                     }}/>
@@ -73,7 +75,7 @@ const NavBar = ({ display , select }) => {
             </NavLink>
             
             <NavLink to="/PostPage">
-                <Tab>
+                <Tab style={{color: selected == 1 ? '#ff2bde' : '#ffffff'}}>
                     <Icon style={{backgroundImage: selected == 1 ? "url("+ PostSelect +")" : "url("+ PostBtn +")"}} onClick={()=>{
                         setSelected(1)
                     }}/>           
@@ -82,7 +84,7 @@ const NavBar = ({ display , select }) => {
             </NavLink>
 
             <NavLink to="/AccountPage">
-                <Tab>
+                <Tab style={{color: selected == 2 ? '#ff2bde' : '#ffffff'}}>
                     
                     <Icon style={{backgroundImage: selected == 2 ? "url("+ ProfileSelect +")" : "url("+ ProfileBtn +")"}} onClick={()=>{
                         setSelected(2)
