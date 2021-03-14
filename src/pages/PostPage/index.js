@@ -37,7 +37,7 @@ const Post = () => {
             </div> */}
 
             <div className="Nav">
-                <NavBar />
+                <NavBar select={1}/>
             </div>
         </div>
     );

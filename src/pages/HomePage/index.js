@@ -42,7 +42,7 @@ console.log(posts);
             <h1>BeatShare</h1>
             <Post posts={posts}></Post>
             <div className="Nav">
-                <NavBar />
+                <NavBar select={0}/>
             </div>
       </div>
 

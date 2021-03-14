@@ -56,7 +56,7 @@ const Account = () => {
             
             
             <div className="Nav">
-                <NavBar />
+                <NavBar select={2}/>
             </div>
         </div>
     );
