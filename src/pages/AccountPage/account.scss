@@ -1,0 +1,30 @@
+.Profile_Main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 1px;
+    padding-bottom: 350px;
+}
+
+
+.profile_menu{
+    z-index:1;
+    position: absolute;
+    right:0;
+    margin-right: 10px;
+    padding-bottom: 480px;
+}
+
+.menubtn{
+    // z-index: 1;
+    margin-right: 10px;
+    position: absolute;
+    right:0;
+    padding-top: 25px;
+    padding-bottom: 730px;
+}
+
+.profile_posts{
+    display: grid;
+    grid-template-columns: 150px 150px;
+}

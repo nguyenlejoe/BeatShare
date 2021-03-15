@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
 import Post from '../../comps/Post';
 import NavBar from "../../comps/NavBar";
 import "../../App.scss";
@@ -9,6 +9,7 @@ import "../../App.scss";
 
 const Home = () => {
     const history = useHistory();
+    const params = useParams();
     const [posts, setPosts] = useState([])
     
     
@@ -31,6 +32,7 @@ const Home = () => {
         console.log(posts);
     }
 
+
     
     const LikePost = async(postId) => {
         var resp = await axios.post(`http://localhost:8080/api/like/${postId}`)
@@ -46,11 +48,11 @@ const Home = () => {
     }
 
 
+
     useEffect(()=>{
         CheckStorage()
         AllPosts()
     },[])
-
 
 
     
@@ -81,7 +83,7 @@ const Home = () => {
                 })}
             </div>
             <div className="Nav">
-                <NavBar />
+                <NavBar select={0}/>
             </div>
       </div>
 
