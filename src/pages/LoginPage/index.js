@@ -44,9 +44,14 @@ const Login = () => {
             console.log("failed to login")
         }else{
             const token = resp.data.accessToken;
+            const id = resp.data.user.id;
             sessionStorage.setItem('token', token);
+            sessionStorage.setItem('id', id);
+            console.log(id)
             axios.defaults.headers.common['Authorization'] = "Bearer " + token
-            history.push("/HomePage")
+            history.push("/HomePage", {
+                id: resp.data.user.id
+            })
         }
     }   
 

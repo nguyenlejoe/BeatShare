@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import './App.scss';
 import Home from './pages/HomePage';
 import Account from './pages/AccountPage';
+import EditAccount from './pages/EditAccount';
 import Post from './pages/PostPage';
 import Start from './pages/StartPage';
 import Login from './pages/LoginPage';
@@ -38,6 +39,7 @@ function App() {
         {/* Logged In */}
         <Route path="/HomePage" exact component={Home}/>
         <Route path="/AccountPage" exact component={Account}/>
+        <Route path="/EditAccount" exact component={EditAccount}/>
         <Route path="/PostPage" exact component={Post}/>
         <Route exact path="/Post/Comments/:id">
           <PostComments/>
