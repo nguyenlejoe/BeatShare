@@ -17,6 +17,7 @@ const SignUp = () => {
     const [img, setImg] = useState("");
     const [artist, setArtist] = useState("");
     const [song, setSong] = useState("");
+    const [bio, setBio] = useState("");
     const history = useHistory()
 
     const HandleRegister = async()=>{
@@ -25,11 +26,14 @@ const SignUp = () => {
             password:pass,
             profile_picture:img,
             favourite_artist:artist,
-            favourite_song:song
+            favourite_song:song,
+            user_bio: bio
         })
         
         const token = resp.data.accessToken;
+        const id = resp.data.user.id;
         sessionStorage.setItem('token', token);
+        sessionStorage.setItem('id', id);
         axios.defaults.headers.common['Authorization'] = "Bearer " + token
         console.log(resp);
         history.push("/HomePage")
@@ -54,6 +58,7 @@ const SignUp = () => {
             <input type="password" className='password_input' placeholder='Password' onChange={(e)=>setPass(e.target.value)}/>
             <input type="text" className='password_input' placeholder='Favourite Artist' onChange={(e)=>setArtist(e.target.value)}/>
             <input type="text" className='password_input' placeholder='Favourite Song' onChange={(e)=>setSong(e.target.value)}/>
+            <input type="text" className='password_input' placeholder='Tell us about your music taste.' onChange={(e)=>setBio(e.target.value)}/>
             {/* <input type="password" className='password_input' placeholder='Re-enter Password'/> */}
         </div>
 

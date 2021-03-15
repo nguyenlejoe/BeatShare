@@ -1,0 +1,14 @@
+.Edit_Main{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+.editboxes {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 85vh;
+    align-items: center;
+}

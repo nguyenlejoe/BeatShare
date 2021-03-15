@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import {useHistory} from 'react-router-dom';
+import {useParams, useHistory} from 'react-router-dom';
 import Post from '../../comps/Post';
 import NavBar from "../../comps/NavBar";
 import "../../App.scss";
@@ -9,6 +9,7 @@ import "../../App.scss";
 
 const Home = () => {
     const history = useHistory();
+    const params = useParams();
     const [posts, setPosts] = useState([])
     
     const CheckStorage = async()=>{
@@ -29,6 +30,12 @@ const Home = () => {
         setPosts(resp.data.posts)
         console.log(posts);
     }
+
+    // const GetUser = async () => {
+    //     let resp = await axios.get(`http://localhost:8080/api/user/${params.id}`)
+    //     setUser(resp.data[0])
+    //     console.log(resp);
+    // }
 
     useEffect(()=>{
         CheckStorage()
