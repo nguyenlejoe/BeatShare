@@ -78,7 +78,7 @@ const EditAccount = () => {
             />
             </div>
             <div className="Nav">
-                <NavBar />
+                <NavBar select={2}/>
             </div>
         </div>
     );

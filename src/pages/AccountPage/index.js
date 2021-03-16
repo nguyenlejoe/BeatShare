@@ -52,18 +52,18 @@ const Account = () => {
         console.log(sessionStorage.getItem("id"));
     }
 
-    // const GetPosts = async() => {
-    //     var resp = await axios.get("http://localhost:8080/api/posts")
-    //     setPosts(resp.data.posts)
-    //     console.log(posts);
-    // }
+    const GetPosts = async() => {
+        var resp = await axios.get("http://localhost:8080/api/posts")
+        setPosts(resp.data.posts)
+        console.log(posts);
+    }
 
     useEffect(()=>{
         // UserInfo()
         // CheckToken()
         GetUser()
         // CheckStorage()
-        // GetPosts()
+        GetPosts()
     },[])
     return (
         <div className="Profile_Main">
