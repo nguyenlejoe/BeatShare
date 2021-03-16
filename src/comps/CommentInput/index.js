@@ -35,6 +35,7 @@ const InputBox = styled.input`
     background-color: transparent;
     color:white;
     width:85%;
+    font-family:'FuturaPTBook';
 `
 
 
