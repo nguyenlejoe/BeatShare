@@ -66,7 +66,7 @@ const Login = () => {
         <div className="Main">
             <div className="Logo">
                 <img src={Logo}/>
-                <h1>BeatShare</h1>
+                <h1 className='logo_text'>BeatShare</h1>
             </div>
 
             <div className="Login">

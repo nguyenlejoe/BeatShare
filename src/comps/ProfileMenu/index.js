@@ -1,11 +1,12 @@
 import react from 'react';
 import styled from 'styled-components';
+import { NavLink as Link } from 'react-router-dom';
 
 const Container = styled.div`
 display:flex;
 flex-direction:column;
 padding:5px;
-height:185px;
+height:80px;
 width:165px;
 z-index:1;
 background-color:#171717;
@@ -27,6 +28,15 @@ height: 1px;
 background-color: #282828;
 `;
 
+const NavLink = styled(Link)`
+text-decoration:none;
+color:white;
+&:hover{
+    background-color:#7209B7;
+    transition: background-color, 0.5s;
+}
+`;
+
 
 
 const ProfileMenu = ({onClick }) => {
@@ -38,17 +48,12 @@ const ProfileMenu = ({onClick }) => {
                 Log out
             </Option>
             <Line/>
+        <NavLink to='/EditAccount'>
             <Option onClick={onClick}>
                 Edit Profile
             </Option>
-            <Line/>
-            <Option onClick={onClick}>
-                View Likes
-            </Option>
-            <Line/>
-            <Option onClick={onClick}>
-                Settings
-            </Option>
+        </NavLink>
+
             <Line/>
         </Container>
     );
