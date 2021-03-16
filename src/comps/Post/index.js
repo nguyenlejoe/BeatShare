@@ -6,6 +6,7 @@ import PostCaption from '../../comps/PostCaption';
 import CommentInput from '../../comps/CommentInput';
 import Comment from '../../comps/Comment';
 import {Link} from 'react-router-dom';
+import axios from 'axios';
 
 const Container = styled.div`
     width:100%;
@@ -61,37 +62,34 @@ let fakePosts = [
 ]
 
 
-const Post = ({posts}) => {
+const Post = ({onLike, userProfileImg,user_name,song_name,song_artist,img_url, postId, description, number_of_likes}) => {
 
 
     return (
-        <Container>
-            {posts && posts.map(o=> 
             <PostCont>
                 <PostTitle
-                    userProfileImage=""
-                    user={o.user_name}
-                    songName={o.song_name}
-                    songArtist={o.song_artist}
+                    userProfileImage={userProfileImg}
+                    user={user_name}
+                    songName={song_name}
+                    songArtist={song_artist}
                 />
                 <PostImg
-                    img={o.img_url} 
+                    img={img_url} 
                 />
                 <PostCaption
-                    caption={o.description}
+                    caption={description}
+                    numLikes={number_of_likes}
+                    onLike={onLike}
                 />
                 <CommentInput/>
                 <Comment/>
-                
                     <AllComments>
-                    <Link style={{ textDecoration: 'none' , color: 'white'}} to={{ pathname: "/Post/Comments/" + o.id }}>
-                        View all {o.commentCount} comments
+                    <Link style={{ textDecoration: 'none' , color: 'white'}} to={{ pathname: "/Post/Comments/" + postId }}>
+                        View all comments
                     </Link>
-                    </AllComments>
-                
+                    </AllComments>  
                 <hr/>
-            </PostCont>)}
-        </Container>
+            </PostCont>
     );
 }
 

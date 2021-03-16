@@ -38,7 +38,7 @@ const LikeButton = styled.div`
 `
 
 //unLikeHeart
-const PostCaption = ({caption, numLikes}) => {
+const PostCaption = ({caption, numLikes, onLike}) => {
 
     const [liked, setLiked] = useState(false);
 
@@ -51,6 +51,7 @@ const PostCaption = ({caption, numLikes}) => {
                     }else{
                         setLiked(false)
                     }
+                    onLike(liked)
                 }}/>
                 <LikeCounter>{numLikes} Likes</LikeCounter>
             </LikeCont>
