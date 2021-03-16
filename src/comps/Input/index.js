@@ -15,6 +15,8 @@ width:250px;
 padding:0 5% 0 5%;
 color:white;
 margin-top:10px;
+outline:none;
+font-family:'FuturaPTBook';
 `;
 
 const Input = ({text, onChange}) =>{

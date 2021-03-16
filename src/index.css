@@ -1,9 +1,12 @@
+@font-face{
+  font-family: 'FuturaPTBook';
+  src: local('FuturaPTBook'), url('./fonts/FuturaPTBook.otf') format('truetype');
+}
+
 body {
   margin: 0;
   background-color: #161616;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', 'Staatliches',
-    sans-serif;
+  font-family: 'FuturaPTBook';
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #161616;
@@ -14,7 +17,4 @@ code {
     monospace;
 }
 
-/* @font-face{
-  font-family: FuturaPTBook;
-  src:local('Futura PT'), url(./fonts/FuturaPT/FuturaPTBook.otf) format('otf');
-} */
+
