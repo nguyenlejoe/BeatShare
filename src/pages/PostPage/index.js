@@ -23,7 +23,7 @@ const Post = () => {
     }
 
     return (
-        <div className="Main">
+        <div className="Post_Main">
             <div className="Back">
                 <Link to='/HomePage'><img src={Back} /></Link>
             </div>
