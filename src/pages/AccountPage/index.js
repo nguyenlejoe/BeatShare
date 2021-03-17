@@ -53,7 +53,7 @@ const Account = () => {
     }
 
     const GetPosts = async() => {
-        var resp = await axios.get("http://localhost:8080/api/posts")
+        var resp = await axios.get("http://localhost:8080/api/myposts")
         setPosts(resp.data.posts)
         console.log(posts);
     }
