@@ -7,16 +7,18 @@ const ImageCont = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
+    
+  
 `;
 
 const ImageBox = styled.img`
-    width:${props=>props.width ? props.width : '93%'};;
-    height:${props=>props.height ? props.height : '93%'};
+    width:${props=>props.width ? props.width : '95%'};;
+    height:${props=>props.height ? props.height : '95%'};
     background-image:url(/BeatShareLogo.svg);
     background-repeat:no-repeat;
     background-position:center;
-    background-size:cover;
-    border-radius: ${props=>props.borderRadius ? props.borderRadius : 'none'};
+    background-size:contain;
+    border-radius: ${props=>props.borderRadius ? props.borderRadius : '10px'};
 `;
 
 

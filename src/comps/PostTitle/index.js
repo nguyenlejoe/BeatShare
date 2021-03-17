@@ -9,7 +9,7 @@ const TitleCont = styled.div`
 `;
 
 const Title = styled.div`
-font-size:14px;
+font-size:16px;
 `
 
 const Avatar = styled.div`

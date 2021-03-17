@@ -4,13 +4,16 @@ import MakePost from "../../comps/MakePost";
 import PostBtn from '../../comps/PostBtn';
 import axios from 'axios';
 import '../../App.scss';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 // Images
 import Back from '../../images/back.png';
 
 const Post = () => {
 
+    const history = useHistory()
+
+    // Create posts
     const HandlePost = async(songImg, songName, songArtist, songDesc) => {
         let resp = await axios.post("http://localhost:8080/api/create_post", {
             img_url: songImg,
@@ -18,7 +21,8 @@ const Post = () => {
             song_artist:songArtist,
             description:songDesc
         })
-
+        
+        history.push("/HomePage")
         console.log(resp.data)
     }
 
@@ -32,10 +36,6 @@ const Post = () => {
                 submitPost={HandlePost}
                 />
             </div>
-            {/* <div className="Post-button">
-                <PostBtn/>
-            </div> */}
-
             <div className="Nav">
                 <NavBar select={1}/>
             </div>
