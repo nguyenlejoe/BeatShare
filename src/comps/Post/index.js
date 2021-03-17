@@ -8,9 +8,6 @@ import Comment from '../../comps/Comment';
 import {Link} from 'react-router-dom';
 import axios from 'axios';
 
-const Container = styled.div`
-    width:100%;
-`
 
 const PostCont = styled.div`
     width:100%;
@@ -25,9 +22,10 @@ const PostCont = styled.div`
 `
 
 const AllComments = styled.div`
-    margin:2% 0 2% 5%;
+    margin:4% 0 1% 5%;
+    font-size:14px;
 `
-
+// Default test posts
 let fakePosts = [
     {
         id:1,
@@ -62,7 +60,7 @@ let fakePosts = [
 ]
 
 
-const Post = ({onLike, userProfileImg,user_name,song_name,song_artist,img_url, postId, description, number_of_likes}) => {
+const Post = ({onLike, userProfileImg,user_name,song_name,song_artist,img_url, postId, description, number_of_likes, likeState}) => {
 
 
     return (
@@ -80,13 +78,13 @@ const Post = ({onLike, userProfileImg,user_name,song_name,song_artist,img_url, p
                     caption={description}
                     numLikes={number_of_likes}
                     onLike={onLike}
+                    likeState={likeState}
                 />
-                <CommentInput/>
                 <Comment/>
                     <AllComments>
-                    <Link style={{ textDecoration: 'none' , color: 'white'}} to={{ pathname: "/Post/Comments/" + postId }}>
-                        View all comments
-                    </Link>
+                        <Link style={{ textDecoration: 'none' , color: 'white'}} to={{ pathname: "/Post/Comments/" + postId }}>
+                            View all comments
+                        </Link>
                     </AllComments>  
                 <hr/>
             </PostCont>
