@@ -1,12 +1,13 @@
 import react from 'react';
 import styled from 'styled-components';
-import { NavLink as Link } from 'react-router-dom';
+import { NavLink as Link, NavLink, useHistory } from 'react-router-dom';
+
 
 const Container = styled.div`
 display:flex;
 flex-direction:column;
 padding:5px;
-height:80px;
+height:130px;
 width:165px;
 z-index:1;
 background-color:#171717;
@@ -16,10 +17,10 @@ color:white;
 
 const Option = styled.div`
 padding:10px;
-&:hover{
+/* &:hover{
     background-color:#7209B7;
     transition: background-color, 0.5s;
-}
+} */
 `;
 
 const Line = styled.div`
@@ -39,22 +40,28 @@ color:white;
 
 
 
+
 const ProfileMenu = ({onClick }) => {
-    
+    let history = useHistory();
 
     return (
         <Container>
-            <Option onClick={onClick}>
-                Log out
-            </Option>
-            <Line/>
-        <NavLink to='/EditAccount'>
-            <Option onClick={onClick}>
-                Edit Profile
-            </Option>
-        </NavLink>
+          <Option onClick={onClick}>
+                  Log out
+          </Option>
+          <Line/>
 
-            <Line/>
+          <Option onClick={()=> {
+              history.push("/EditAccount");
+           }}>Edit Profile
+           </Option>
+              <Line/>
+          <NavLink to='/ManagePostPage'>
+              <Option onClick={onClick}>
+                  Manage Posts
+              </Option>
+          </NavLink>
+          <Line/>
         </Container>
     );
 }

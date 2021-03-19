@@ -47,6 +47,7 @@ const SignUp = () => {
     return (
         <div className="Main">
             <div className="Top">
+                
                 {/* Add pfp functionality here */}
                 <PFP />
             </div>

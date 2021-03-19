@@ -28,6 +28,22 @@ flex-direction:column;
 const Info = styled.p`
 font-size:12px;
 `;
+
+const Delete = styled.div`
+border-radius:100%;
+background-color:#000000;
+width:25px;
+height:25px;
+padding:2px;
+box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.51), -2px -2px 12px rgba(255, 255, 255, 0.19), 0px 0px 22px 5px rgba(0, 0, 0, 0.19), inset 0px 1px 10px rgba(255, 255, 255, 0.2);
+color:#FFFFFF;
+justify-content:center;
+text-align:center;
+display:${props=>props.display ? props.display : 'none'};
+position:relative;
+top:20px;
+`;
+
 let fakeProfileposts = [
     {
         id:1,
@@ -49,20 +65,21 @@ let fakeProfileposts = [
     }
 ]
 
-const ProfilePost = ({posts}) => {
+const ProfilePost = ({posts, display, onClick, onDelete, img_url, song_name, song_artist}) => {
     return(
         <Container>
-        {posts && posts.map(o=>
-        <PostCont> 
             
+        
+        <PostCont> 
+            <Delete display={display} onClick={onClick}>x</Delete>
             <SinglePost>
-                <PostImg width="150px" height="150px" img={o.img_url} borderRadius="7px"/>
-                <SongName songName={o.song_name}></SongName>
-                <SongArtist songArtist={o.song_artist}/>
+                <PostImg width="150px" height="150px" img={img_url} borderRadius="7px"/>
+                <SongName songName={song_name}></SongName>
+                <SongArtist songArtist={song_artist}/>
             </SinglePost>
 
             
-            </PostCont>)}
+            </PostCont>
 
         </Container>
     )
