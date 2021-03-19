@@ -16,10 +16,10 @@ color:white;
 
 const Option = styled.div`
 padding:10px;
-&:hover{
+/* &:hover{
     background-color:#7209B7;
     transition: background-color, 0.5s;
-}
+} */
 `;
 
 const Line = styled.div`
@@ -38,8 +38,7 @@ color:white;
 `;
 
 
-
-const ProfileMenu = ({onClick }) => {
+const ProfileMenu = ({ onClick }) => {
     
 
     return (
