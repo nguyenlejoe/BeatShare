@@ -26,19 +26,26 @@ const EditAccount = () => {
 
     const GetUser = async () => {
         let id = sessionStorage.getItem("id")
-        let resp = await axios.get(`http://localhost:8080/api/user/${id}`, {
-        user_name:un,
-        password:pass,
-        profile_picture:img,
-        favourite_artist:artist,
-        favourite_song:song,
-        user_bio: bio            
+        let resp = await axios.get(`http://localhost:8080/api/user/${id}`, {           
         })
         setUser(resp.data[0])
         console.log(resp.data)
 
 
 
+    }
+
+    const EditUser = async () => {
+        let resp = await axios.patch(`http://localhost:8080/api/user/edit`, {
+            user_name:un,
+            password:pass,
+            profile_picture:img,
+            favourite_artist:artist,
+            favourite_song:song,
+            user_bio: bio            
+            })
+            console.log(resp.data)
+            GetUser();
     }
 
     useEffect(()=>{
@@ -74,7 +81,7 @@ const EditAccount = () => {
 
             <Button
             text="Confirm Changes"
-            onClick={GetUser}
+            onClick={EditUser}
             />
             </div>
             <div className="Nav">

@@ -1,5 +1,7 @@
 import react from 'react';
 import styled from 'styled-components';
+import { NavLink as Link, NavLink, useHistory } from 'react-router-dom';
+
 
 const Container = styled.div`
 display:flex;
@@ -29,8 +31,13 @@ background-color: #282828;
 
 
 
+
+
+
+
+
 const ProfileMenu = ({onClick }) => {
-    
+    let history = useHistory();
 
     return (
         <Container>
@@ -38,7 +45,10 @@ const ProfileMenu = ({onClick }) => {
                 Log out
             </Option>
             <Line/>
-            <Option onClick={onClick}>
+            <Option onClick={()=> {
+                history.push("/EditAccount");
+
+            }}>
                 Edit Profile
             </Option>
             <Line/>
