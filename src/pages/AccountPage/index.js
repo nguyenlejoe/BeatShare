@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import NavBar from "../../comps/NavBar";
 import ProfileTop from "../../comps/ProfileTop"
-import MenuBtn from '../../images/menuBtn.svg';
+import MenuBtn from '../../imgs/menuBtn.svg';
 import ProfileMenu from '../../comps/ProfileMenu';
 import ProfilePost from '../../comps/ProfilePost';
 
 
-import {useParams, useHistory} from 'react-router-dom';
+import {useParams, useHistory, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import '../../App.scss';
 
@@ -15,8 +15,10 @@ const Account = () => {
     const params = useParams();
     const [show, setShow] = useState(false);
     const [user , setUser] = useState({});
+    const [otheruser , setOtherUser] = useState({});
     const [posts, setPosts] = useState([])
-
+    const [otherposts, setotherPosts] = useState([])
+    const location = useLocation();
 
 
     // const CheckStorage = async()=>{
@@ -30,24 +32,21 @@ const Account = () => {
     //         }
     // }   
 
-    // const CheckToken = async () => {
-    //     const resp = await axios.get("http://localhost:8080/api/users/1");
-    //     console.log(resp.data);
-    //     if( resp.data !== "expired" && resp.data !== "no token"){
-    //         setUser ({
-    //             ...resp.data
-    //         })
-    //         console.log(user);
-    //     }
-    // }
+
+
+    const GetOtheruser = async () => {
+        let resp = await axios.get(`http://localhost:8080/api/user/${params.id}`)
+        setOtherUser(resp.data[0])
+        console.log(resp);
+    }
 
     const GetUser = async () => {
-        let id = sessionStorage.getItem("id")
+        let id = sessionStorage.getItem("id");
         let resp = await axios.get(`http://localhost:8080/api/user/${id}`)
         setUser(resp.data[0])
         console.log(resp);
-        console.log(sessionStorage.getItem("id"));
     }
+
 
     const GetPosts = async() => {
         var resp = await axios.get("http://localhost:8080/api/myposts")
@@ -55,22 +54,29 @@ const Account = () => {
         console.log(posts);
     }
 
+    
+    const GetOtherPosts = async() => {
+        var resp = await axios.get(`http://localhost:8080/api/userPosts/${params.id}`)
+        setotherPosts(resp.data.posts)
+        console.log(posts);
+    }
+
 
 
     useEffect(()=>{
-        // UserInfo()
-        // CheckToken()
+        GetOtheruser()
         GetUser()
-        // CheckStorage()
         GetPosts()
+        GetOtherPosts()
     },[])
+
+    if(location.pathname === "/AccountPage"){
     return (
         <div className="Profile_Main">
 
             <div className="menubtn">
                 <img src={MenuBtn} onClick={()=> setShow(!show)}/>
             </div>
-
 
             {show ? (
                             <div className='profile_menu'>
@@ -79,8 +85,6 @@ const Account = () => {
             )          
             : null
         }
-
-
 
             <ProfileTop 
                 user_name={user.user_name}
@@ -103,7 +107,33 @@ const Account = () => {
                 <NavBar select={2}/>
             </div>
         </div>
-    );
+    );}else {
+        return (
+            <div className="Profile_Main">
+    
+                <ProfileTop 
+                    user_name={otheruser.user_name}
+                    favourite_artist={otheruser.favourite_artist}
+                    favourite_song={otheruser.favourite_song}
+                    user_bio={otheruser.user_bio}
+                />
+    
+                <div className='profile_posts'>
+              {otherposts && otherposts.map(o=>
+                  <ProfilePost 
+                  img_url={o.img_url}
+                  song_artist={o.song_artist}
+                  song_name={o.song_name}
+                />
+                )}
+            </div>
+                
+                <div className="Nav">
+                    <NavBar select={2}/>
+                </div>
+            </div>
+        );
+    }
 }
 
 export default Account;

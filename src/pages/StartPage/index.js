@@ -3,7 +3,7 @@ import Button from '../../comps/Button';
 import {Link} from 'react-router-dom';
 
 // Images
-import Logo from '../../images/BeatShareLogo.svg'
+import Logo from '../../imgs/BeatShareLogo.svg'
 
 import '../../App.scss';
 

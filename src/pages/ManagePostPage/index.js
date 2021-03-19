@@ -7,7 +7,7 @@ import "../../App.scss";
 import {CSSTransition} from 'react-transition-group';
 
 // images
-import Back from '../../images/back.png';
+import Back from '../../imgs/back.png';
 
 
 
