@@ -1,6 +1,6 @@
 import react from 'react';
 import styled from 'styled-components';
-import { NavLink as Link, NavLink, useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 
 const Container = styled.div`
@@ -56,11 +56,14 @@ const ProfileMenu = ({onClick }) => {
            }}>Edit Profile
            </Option>
               <Line/>
-          <NavLink to='/ManagePostPage'>
-              <Option onClick={onClick}>
+
+         
+              <Option onClick={()=> {
+              history.push("/ManagePostPage");
+             }}>
                   Manage Posts
               </Option>
-          </NavLink>
+         
           <Line/>
         </Container>
     );

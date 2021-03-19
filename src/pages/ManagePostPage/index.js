@@ -6,7 +6,7 @@ import ProfilePost from '../../comps/ProfilePost';
 import "../../App.scss";
 
 // images
-import Back from '../../images/back.png';
+import Back from '../../imgs/back.png';
 
 
 

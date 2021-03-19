@@ -47,7 +47,7 @@ const MakePost = ({img, submitPost, submit}) =>{
 
         let resp = await axios.post("http://localhost:8080/api/create_post", data)
         console.log(resp.data)
-        // history.push("/HomePage")
+        history.push("/HomePage")
     }
 
 
