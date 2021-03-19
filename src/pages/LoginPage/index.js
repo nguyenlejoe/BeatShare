@@ -4,10 +4,10 @@ import {Link, useHistory} from 'react-router-dom';
 
 import Input from '../../comps/Input';
 import Button from '../../comps/Button';
-
-// Images
+//import Logo from '../../imgs/BeatShareLogo.svg'
 import Logo from '../../images/BeatShareLogo.svg';
 import Back from '../../images/back.png';
+
 
 import '../../App.scss';
 
