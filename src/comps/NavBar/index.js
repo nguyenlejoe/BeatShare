@@ -3,14 +3,14 @@ import styled from 'styled-components';
 import { NavLink as Link } from 'react-router-dom';
 
 // Images
-import HomeBtn from "../../images/home.png";
-import PostBtn from "../../images/post.png";
-import ProfileBtn from "../../images/profile.png";
+import HomeBtn from "../../imgs/home.png";
+import PostBtn from "../../imgs/post.png";
+import ProfileBtn from "../../imgs/profile.png";
 
 // Images Selected
-import HomeSelect from "../../images/home_selected.png";
-import PostSelect from "../../images/post_selected.png";
-import ProfileSelect from "../../images/profile_selected.png";
+import HomeSelect from "../../imgs/home_selected.png";
+import PostSelect from "../../imgs/post_selected.png";
+import ProfileSelect from "../../imgs/profile_selected.png";
 
 const NavCont = styled.div`
 width:100%;

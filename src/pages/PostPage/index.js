@@ -7,24 +7,25 @@ import '../../App.scss';
 import {Link, useHistory} from 'react-router-dom';
 
 // Images
-import Back from '../../images/back.png';
+import Back from '../../imgs/back.png';
 
 const Post = () => {
 
     const history = useHistory()
 
     // Create posts
-    const HandlePost = async(songImg, songName, songArtist, songDesc) => {
-        let resp = await axios.post("http://localhost:8080/api/create_post", {
-            img_url: songImg,
-            song_name:songName,
-            song_artist:songArtist,
-            description:songDesc
-        })
+    // const HandlePost = async(songImg, songName, songArtist, songDesc) => {
+    //     let resp = await axios.post("http://localhost:8080/api/create_post", {
+    //         img_url: songImg,
+    //         song_name:songName,
+    //         song_artist:songArtist,
+    //         description:songDesc
+    //     })
         
-        history.push("/HomePage")
-        console.log(resp.data)
-    }
+    //     history.push("/HomePage")
+    //     console.log(resp.data)
+    // }
+
 
     return (
         <div className="Post_Main">
@@ -33,7 +34,7 @@ const Post = () => {
             </div>
             <div className="Post-info">
                 <MakePost 
-                submitPost={HandlePost}
+
                 />
             </div>
             <div className="Nav">

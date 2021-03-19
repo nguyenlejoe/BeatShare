@@ -32,7 +32,6 @@ const PostImg = ({img, width, height, borderRadius}) => {
 }
 
 PostImg.defaultProps = {
-  img:"sampelCover.png"
 }
 
 export default PostImg;

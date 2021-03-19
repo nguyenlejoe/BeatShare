@@ -4,8 +4,8 @@ import PFP from "../../comps/Pfp";
 import { NavLink as Link } from 'react-router-dom';
 
 // Images
-import FavArtist from '../../images/profile_selected.png';
-import FavSong from '../../images/eighthnote.png';
+import FavArtist from '../../imgs/profile_selected.png';
+import FavSong from '../../imgs/eighthnote.png';
 
 const ProfileTopBox = styled.div`
     display: flex; 

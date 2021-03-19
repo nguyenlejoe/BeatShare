@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import cameraIcon from "../../images/camera.svg";
+import cameraIcon from "../../imgs/camera.svg";
 
 const Cont = styled.div`
 display:flex;

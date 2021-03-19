@@ -6,7 +6,7 @@ import Input from '../../comps/Input';
 import Button from '../../comps/Button';
 
 // Images
-import Logo from '../../images/BeatShareLogo.svg'
+import Logo from '../../imgs/BeatShareLogo.svg'
 
 import '../../App.scss';
 
