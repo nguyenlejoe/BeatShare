@@ -7,7 +7,7 @@ const Container = styled.div`
 display:flex;
 flex-direction:column;
 padding:5px;
-height:185px;
+height:130px;
 width:165px;
 z-index:1;
 background-color:#171717;
@@ -17,10 +17,10 @@ color:white;
 
 const Option = styled.div`
 padding:10px;
-&:hover{
+/* &:hover{
     background-color:#7209B7;
     transition: background-color, 0.5s;
-}
+} */
 `;
 
 const Line = styled.div`
@@ -29,9 +29,14 @@ height: 1px;
 background-color: #282828;
 `;
 
-
-
-
+const NavLink = styled(Link)`
+text-decoration:none;
+color:white;
+&:hover{
+    background-color:#7209B7;
+    transition: background-color, 0.5s;
+}
+`;
 
 
 
@@ -41,25 +46,22 @@ const ProfileMenu = ({onClick }) => {
 
     return (
         <Container>
-            <Option onClick={onClick}>
-                Log out
-            </Option>
-            <Line/>
-            <Option onClick={()=> {
-                history.push("/EditAccount");
+          <Option onClick={onClick}>
+                  Log out
+          </Option>
+          <Line/>
 
-            }}>
-                Edit Profile
-            </Option>
-            <Line/>
-            <Option onClick={onClick}>
-                View Likes
-            </Option>
-            <Line/>
-            <Option onClick={onClick}>
-                Settings
-            </Option>
-            <Line/>
+          <Option onClick={()=> {
+              history.push("/EditAccount");
+           }}>Edit Profile
+           </Option>
+              <Line/>
+          <NavLink to='/ManagePostPage'>
+              <Option onClick={onClick}>
+                  Manage Posts
+              </Option>
+          </NavLink>
+          <Line/>
         </Container>
     );
 }

@@ -47,7 +47,7 @@ const UserDesc = styled.div`
     // position: relative;
 `
 
-const User = styled.h1`
+const User = styled.h2`
     padding-top:60px;
     font-size:20px;
 `;
@@ -74,16 +74,16 @@ const Favourites = styled.div`
 `;
 
 const IconInfo = styled.img`
-    width:22.7px;
+    width:20px;
     height:27px;
 `;
 
 const InfoBig = styled.p`
-    font-size: 14px;
+    font-size: 16px;
 `;
 
 const InfoSmall = styled.p`
-    font-size: 10px;
+    font-size: 12px;
 `;
 
 const ProfileTop = ({user_name, user_bio, favourite_artist, favourite_song }) => {
@@ -118,7 +118,7 @@ const ProfileTop = ({user_name, user_bio, favourite_artist, favourite_song }) =>
 
 ProfileTop.defaultProps = {
     user_name:"Username",
-    user_bio:"Bio is going to be 255 characters, that gives users enoughs room to tell a little bit about themselves. Wow 255 characters is a lot, almost there, keep going, come on how much more do I have to write, im so close, what if I do the alphabet, abcdefjhijklmn",
+    user_bio:"BeatShare user bio",
     favourite_artist:"Artist Name",
     favourite_song:"Song Name"
 

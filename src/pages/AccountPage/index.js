@@ -47,18 +47,18 @@ const Account = () => {
     }
 
 
+    const GetPosts = async() => {
+        var resp = await axios.get("http://localhost:8080/api/myposts")
+        setPosts(resp.data.posts)
+        console.log(posts);
+    }
 
-    // const GetPosts = async() => {
-    //     var resp = await axios.get("http://localhost:8080/api/posts")
-    //     setPosts(resp.data.posts)
-    //     console.log(posts);
-    // }
+
 
     useEffect(()=>{
-        // CheckToken()
         GetOtheruser()
         GetUser()
-        // GetPosts()
+        GetPosts()
     },[])
 
     if(location.pathname === "/AccountPage"){
@@ -85,7 +85,13 @@ const Account = () => {
             />
 
             <div className='profile_posts'>
-                <ProfilePost posts={posts}/>
+            {posts && posts.map(o=>
+                <ProfilePost 
+                img_url={o.img_url}
+                song_artist={o.song_artist}
+                song_name={o.song_name}
+                />
+                )}
             </div>
             
             <div className="Nav">
@@ -104,8 +110,14 @@ const Account = () => {
                 />
     
                 <div className='profile_posts'>
-                    <ProfilePost posts={posts}/>
-                </div>
+              {posts && posts.map(o=>
+                  <ProfilePost 
+                  img_url={o.img_url}
+                  song_artist={o.song_artist}
+                  song_name={o.song_name}
+                />
+                )}
+            </div>
                 
                 <div className="Nav">
                     <NavBar select={2}/>
