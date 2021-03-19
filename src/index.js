@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import './fonts/FuturaPTBook.otf';
+import './fonts/Staatliches-Regular.ttf';
 
 ReactDOM.render(
   <React.StrictMode>

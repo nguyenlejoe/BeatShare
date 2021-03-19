@@ -18,10 +18,7 @@ const Account = () => {
     const [posts, setPosts] = useState([])
 
 
-    // Get single user
-    // const UserInfo = async() => {
-    //     var resp = await axios.get()
-    // }
+
     // const CheckStorage = async()=>{
     //     var resp = await axios.get("http://localhost:8080/api/authorize")
     //     console.log(resp.data);
@@ -57,6 +54,8 @@ const Account = () => {
         setPosts(resp.data.posts)
         console.log(posts);
     }
+
+
 
     useEffect(()=>{
         // UserInfo()

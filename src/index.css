@@ -3,6 +3,11 @@
   src: local('FuturaPTBook'), url('./fonts/FuturaPTBook.otf') format('truetype');
 }
 
+@font-face{
+  font-family: 'Staatliches-Regular';
+  src: local('Staatliches-Regular'), url('./fonts/Staatliches-Regular.ttf') format('truetype');
+}
+
 body {
   margin: 0;
   background-color: #161616;
