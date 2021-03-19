@@ -1,6 +1,7 @@
 import react from 'react';
 import styled from 'styled-components';
 import { Link, useHistory } from 'react-router-dom';
+import axios from 'axios';
 
 
 const Container = styled.div`
@@ -47,8 +48,12 @@ const ProfileMenu = ({onClick }) => {
 
     return (
         <Container>
-          <Option onClick={onClick}>
-                  Log out
+          <Option onClick={()=> {
+              sessionStorage.clear();
+              axios.defaults.headers.common['Authorization'] = null;
+              history.push("/")
+           }}>
+            Log out
           </Option>
           <Line/>
 

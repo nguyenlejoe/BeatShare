@@ -6,6 +6,7 @@ import CommentCaption from '../../comps/CommentCaption';
 import axios from 'axios';
 import {useParams, useHistory} from 'react-router-dom';
 
+
 const ViewPostComments = () => {
     
     const params = useParams();
@@ -44,6 +45,7 @@ const ViewPostComments = () => {
     return (
         <div className="PostComments">
             <CommentCaption
+                id={post.poster_id}
                 userName={post.user_name}
                 postCaption={post.description}
                 onClick={()=>history.push('/HomePage')}

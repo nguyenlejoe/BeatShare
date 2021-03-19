@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
+import UserAvatar from '../../comps/UserAvatar';
 
 const Container = styled.div`
 width: 100%;
-
 
 `
 
@@ -11,6 +11,7 @@ const CommentCont = styled.div`
     width: 100%;
     display:flex;
     justify-content:center;
+    align-items:center;
     margin: 4% 0 2% 0;
 `;
 
@@ -20,6 +21,7 @@ const UserCont = styled.div`
 
 const CommentBox = styled.div`
     width:70%;
+    margin-top:3px;
 `
 
 
@@ -29,9 +31,13 @@ const Comment = ({comments}) => {
         <Container>
            {comments && comments.map((o)=>
             <CommentCont>
-                <UserCont><b>{o.user_name}</b></UserCont>
+                <UserAvatar
+                    id={o.id}
+                    username={o.user_name}
+                />
                 <CommentBox> {o.message}</CommentBox>
-            </CommentCont>)} 
+            </CommentCont>
+            )} 
         </Container>
     );
 }

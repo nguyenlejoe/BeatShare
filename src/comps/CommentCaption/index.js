@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Post from '../Post';
+import UserAvatar from '../../comps/UserAvatar';
 
 const CaptionCont = styled.div`
 width: 100%;
@@ -26,7 +27,8 @@ const Avatar = styled.div`
 `
 
 const PostCaption = styled.div`
-    width:70%;
+    width:63%;
+    height:17px;
     b{
         margin-right:10px;
     }
@@ -40,13 +42,16 @@ const BackButton = styled.img`
     top:10px;
 `
 
-const CommentCaption = ({userProfile, userName, postCaption, onClick}) => {
+const CommentCaption = ({userProfile, userName, postCaption, onClick, id}) => {
     return (
         <CaptionCont>
             <BackButton src="/backBtn.svg" onClick={onClick}></BackButton>
-            <Avatar/>
+            <UserAvatar 
+            username={userName}
+            id={id}
+            />
             <PostCaption>
-               <b>{userName}</b>  {postCaption}
+            {postCaption}
             </PostCaption>
         </CaptionCont>
     );

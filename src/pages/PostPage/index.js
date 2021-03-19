@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from "../../comps/NavBar";
 import MakePost from "../../comps/MakePost";
 import PostBtn from '../../comps/PostBtn';
@@ -13,6 +13,21 @@ const Post = () => {
 
     const history = useHistory()
 
+    
+    // Check browser for token
+    const CheckStorage = async()=>{
+        var resp = await axios.get("http://localhost:8080/api/authorize")
+        console.log(resp.data);
+            // If there is a token, send them to the homepage
+            if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
+                console.log("Good token")
+            }else{ // If there is no token or a bad one, send them back to the login page
+                history.push("/LoginPage");
+                console.log("Bad token")
+            }
+    
+    }
+
     // Create posts
     // const HandlePost = async(songImg, songName, songArtist, songDesc) => {
     //     let resp = await axios.post("http://localhost:8080/api/create_post", {
@@ -25,6 +40,10 @@ const Post = () => {
     //     history.push("/HomePage")
     //     console.log(resp.data)
     // }
+
+    useEffect(()=>{
+        CheckStorage()
+    }, [])
 
 
     return (
