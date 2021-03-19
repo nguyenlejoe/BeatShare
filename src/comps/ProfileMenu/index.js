@@ -6,7 +6,7 @@ const Container = styled.div`
 display:flex;
 flex-direction:column;
 padding:5px;
-height:80px;
+height:130px;
 width:165px;
 z-index:1;
 background-color:#171717;
@@ -43,17 +43,22 @@ const ProfileMenu = ({ onClick }) => {
 
     return (
         <Container>
-            <Option onClick={onClick}>
+        <Option onClick={onClick}>
                 Log out
-            </Option>
+        </Option>
             <Line/>
         <NavLink to='/EditAccount'>
             <Option onClick={onClick}>
                 Edit Profile
             </Option>
         </NavLink>
-
             <Line/>
+        <NavLink to='/ManagePostPage'>
+            <Option onClick={onClick}>
+                Manage Posts
+            </Option>
+        </NavLink>
+        <Line/>
         </Container>
     );
 }
