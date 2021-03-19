@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useParams} from 'react-router-dom';
 import axios from 'axios';
 import NavBar from "../../comps/NavBar";
 import ProfilePost from '../../comps/ProfilePost';
@@ -11,14 +11,23 @@ import Back from '../../images/back.png';
 
 
 const ManagePost = () => {
+    const params = useParams();
     const [open, setOpen] = useState(false);
     const [activeMenu, setActiveMenu] = useState('main');
     const [posts, setPosts] = useState([]);
+    const [postId, setID] = useState('');
 
     const GetPosts = async() => {
         var resp = await axios.get("http://localhost:8080/api/myposts")
         setPosts(resp.data.posts)
         console.log(posts);
+    }
+
+    const DeletePost = async(postId)=>{
+        console.log(postId)
+        let resp = await axios.delete(`http://localhost:8080/api/posts/${postId}`)
+        console.log(resp.data);
+        GetPosts();
     }
 
     useEffect(()=>{
@@ -34,17 +43,36 @@ const ManagePost = () => {
             </div>
 
             <div className='manage_posts'>
-                <ProfilePost display='flex' posts={posts} onClick={() => setOpen(!open)}/>
+                {posts && posts.map(o=>
+                <ProfilePost 
+                img_url={o.img_url}
+                song_artist={o.song_artist}
+                song_name={o.song_name}
+                onClick={()=>{
+                    setOpen(!open)
+                    setID(o.id)
+                    console.log(postId)
+                }}
+                display='flex'
+                />
+                )}
+                
             </div>
-
             
             {open ? (
             <div className='delete_post'>
                 <h2>Delete Post</h2>
                 <p>Are you sure?</p>
                 <div className="delete_options">
-                    <p onClick={() => setOpen(!open)}>Cancel</p>
-                    <p style={{color:'red', marginLeft:'70px'}}>Delete</p>
+                    <p onClick={() => {
+                        // DeletePost(postId)
+                        setOpen(!open)
+                        }}>Cancel</p>
+                    <p style={{color:'red', marginLeft:'70px'}} onClick={() => {
+                        DeletePost(postId) 
+                        setOpen(!open)
+                    }}
+                        >Delete</p>
                 </div>
             </div>
             ) : null }   
