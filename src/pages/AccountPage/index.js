@@ -17,6 +17,7 @@ const Account = () => {
     const [user , setUser] = useState({});
     const [otheruser , setOtherUser] = useState({});
     const [posts, setPosts] = useState([])
+    const [otherposts, setotherPosts] = useState([])
     const location = useLocation();
 
 
@@ -53,12 +54,20 @@ const Account = () => {
         console.log(posts);
     }
 
+    
+    const GetOtherPosts = async() => {
+        var resp = await axios.get(`http://localhost:8080/api/userPosts/${params.id}`)
+        setotherPosts(resp.data.posts)
+        console.log(posts);
+    }
+
 
 
     useEffect(()=>{
         GetOtheruser()
         GetUser()
         GetPosts()
+        GetOtherPosts()
     },[])
 
     if(location.pathname === "/AccountPage"){
@@ -110,7 +119,7 @@ const Account = () => {
                 />
     
                 <div className='profile_posts'>
-              {posts && posts.map(o=>
+              {otherposts && otherposts.map(o=>
                   <ProfilePost 
                   img_url={o.img_url}
                   song_artist={o.song_artist}

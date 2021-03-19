@@ -23,7 +23,7 @@ font-family:'FuturaPTBook';
 const TextArea = ({text, onChange}) =>{
 
     return(
-            <TextField placeholder={text} onChange={onChange}/>
+            <TextField defaultValue={text} onChange={onChange}/>
     );
 }
 

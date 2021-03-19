@@ -22,7 +22,7 @@ font-family:'FuturaPTBook';
 const Input = ({text, onChange}) =>{
 
     return(
-            <TextInput placeholder={text} onChange={onChange}/>
+            <TextInput defaultValue={text} onChange={onChange}/>
     );
 }
 
