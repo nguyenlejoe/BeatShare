@@ -74,16 +74,16 @@ const Favourites = styled.div`
 `;
 
 const IconInfo = styled.img`
-    width:22.7px;
+    width:20px;
     height:27px;
 `;
 
 const InfoBig = styled.p`
-    font-size: 14px;
+    font-size: 16px;
 `;
 
 const InfoSmall = styled.p`
-    font-size: 10px;
+    font-size: 12px;
 `;
 
 const ProfileTop = ({user_name, user_bio, favourite_artist, favourite_song }) => {

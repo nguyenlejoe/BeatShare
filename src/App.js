@@ -9,6 +9,7 @@ import Login from './pages/LoginPage';
 import SignUp from './pages/SignupPage';
 import PostComments from './pages/ViewPostComments';
 import Information from './pages/Signup-InfoPage';
+import ManagePost from './pages/ManagePostPage';
 import {
   BrowserRouter as Router,
   Switch,
@@ -39,6 +40,7 @@ function App() {
         {/* Logged In */}
         <Route path="/HomePage" exact component={Home}/>
         <Route path="/AccountPage" exact component={Account}/>
+        <Route path="/ManagePostPage" exact component={ManagePost}/>
         <Route path="/EditAccount" exact component={EditAccount}/>
         <Route path="/PostPage" exact component={Post}/>
         <Route exact path="/Post/Comments/:id">
