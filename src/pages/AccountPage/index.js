@@ -90,7 +90,13 @@ const Account = () => {
             />
 
             <div className='profile_posts'>
-                <ProfilePost posts={posts}/>
+            {posts && posts.map(o=>
+                <ProfilePost 
+                img_url={o.img_url}
+                song_artist={o.song_artist}
+                song_name={o.song_name}
+                />
+                )}
             </div>
             
             <div className="Nav">

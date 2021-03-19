@@ -65,21 +65,21 @@ let fakeProfileposts = [
     }
 ]
 
-const ProfilePost = ({posts, display, onClick}) => {
+const ProfilePost = ({posts, display, onClick, onDelete, img_url, song_name, song_artist}) => {
     return(
         <Container>
             
-        {posts && posts.map(o=>
+        
         <PostCont> 
             <Delete display={display} onClick={onClick}>x</Delete>
             <SinglePost>
-                <PostImg width="150px" height="150px" img={o.img_url} borderRadius="7px"/>
-                <SongName songName={o.song_name}></SongName>
-                <SongArtist songArtist={o.song_artist}/>
+                <PostImg width="150px" height="150px" img={img_url} borderRadius="7px"/>
+                <SongName songName={song_name}></SongName>
+                <SongArtist songArtist={song_artist}/>
             </SinglePost>
 
             
-            </PostCont>)}
+            </PostCont>
 
         </Container>
     )
