@@ -53,7 +53,7 @@ const ManagePost = () => {
                     setID(o.id)
                     console.log(postId)
                 }}
-                display='flex'
+                // display='inline'
                 />
                 )}
                 
@@ -75,7 +75,8 @@ const ManagePost = () => {
                         setOpen(false)
                         }}>Cancel</p>
                     <p style={{color:'red', marginLeft:'70px'}} onClick={() => {
-                        DeletePost(postId) 
+                        DeletePost(postId)
+                        setOpen(false) 
                         // setOpen(!open)
                     }}
                         >Delete</p>

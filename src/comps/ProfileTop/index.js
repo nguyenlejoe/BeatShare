@@ -60,7 +60,6 @@ const Bio = styled.p`
 
 const UserInfo = styled.div`
     display:flex;
-    position: flex;
     justify-content:center;
     
 `
