@@ -1,6 +1,7 @@
 import react from 'react';
 import styled from 'styled-components';
-import { NavLink as Link } from 'react-router-dom';
+import { NavLink as Link, NavLink, useHistory } from 'react-router-dom';
+
 
 const Container = styled.div`
 display:flex;
@@ -38,27 +39,29 @@ color:white;
 `;
 
 
-const ProfileMenu = ({ onClick }) => {
-    
+
+
+const ProfileMenu = ({onClick }) => {
+    let history = useHistory();
 
     return (
         <Container>
-        <Option onClick={onClick}>
-                Log out
-        </Option>
-            <Line/>
-        <NavLink to='/EditAccount'>
-            <Option onClick={onClick}>
-                Edit Profile
-            </Option>
-        </NavLink>
-            <Line/>
-        <NavLink to='/ManagePostPage'>
-            <Option onClick={onClick}>
-                Manage Posts
-            </Option>
-        </NavLink>
-        <Line/>
+          <Option onClick={onClick}>
+                  Log out
+          </Option>
+          <Line/>
+
+          <Option onClick={()=> {
+              history.push("/EditAccount");
+           }}>Edit Profile
+           </Option>
+              <Line/>
+          <NavLink to='/ManagePostPage'>
+              <Option onClick={onClick}>
+                  Manage Posts
+              </Option>
+          </NavLink>
+          <Line/>
         </Container>
     );
 }

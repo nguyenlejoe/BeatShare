@@ -39,7 +39,12 @@ function App() {
         <Route path="/Signup-InfoPage" exact component={Information}/>
         {/* Logged In */}
         <Route path="/HomePage" exact component={Home}/>
-        <Route path="/AccountPage" exact component={Account}/>
+        <Route exact path="/user/:id"> 
+         <Account />
+        </Route>
+        <Route exact path="/AccountPage"> 
+         <Account />
+        </Route>
         <Route path="/ManagePostPage" exact component={ManagePost}/>
         <Route path="/EditAccount" exact component={EditAccount}/>
         <Route path="/PostPage" exact component={Post}/>
