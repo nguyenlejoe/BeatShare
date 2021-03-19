@@ -11,7 +11,9 @@ import Back from '../../images/back.png';
 
 
 const ManagePost = () => {
-    const [posts, setPosts] = useState([])
+    const [open, setOpen] = useState(false);
+    const [activeMenu, setActiveMenu] = useState('main');
+    const [posts, setPosts] = useState([]);
 
     const GetPosts = async() => {
         var resp = await axios.get("http://localhost:8080/api/myposts")
@@ -32,12 +34,25 @@ const ManagePost = () => {
             </div>
 
             <div className='manage_posts'>
-                <ProfilePost display='flex' posts={posts}/>
+                <ProfilePost display='flex' posts={posts} onClick={() => setOpen(!open)}/>
             </div>
+
+            
+            {open ? (
+            <div className='delete_post'>
+                <h2>Delete Post</h2>
+                <p>Are you sure?</p>
+                <div className="delete_options">
+                    <p onClick={() => setOpen(!open)}>Cancel</p>
+                    <p style={{color:'red', marginLeft:'70px'}}>Delete</p>
+                </div>
+            </div>
+            ) : null }   
 
             <div className="Nav">
                 <NavBar select={2}/>
             </div>
+           
 
         </div>
 
