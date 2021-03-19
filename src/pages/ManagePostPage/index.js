@@ -4,6 +4,7 @@ import axios from 'axios';
 import NavBar from "../../comps/NavBar";
 import ProfilePost from '../../comps/ProfilePost';
 import "../../App.scss";
+import {CSSTransition} from 'react-transition-group';
 
 // images
 import Back from '../../images/back.png';
@@ -13,7 +14,6 @@ import Back from '../../images/back.png';
 const ManagePost = () => {
     const params = useParams();
     const [open, setOpen] = useState(false);
-    const [activeMenu, setActiveMenu] = useState('main');
     const [posts, setPosts] = useState([]);
     const [postId, setID] = useState('');
 
@@ -49,7 +49,7 @@ const ManagePost = () => {
                 song_artist={o.song_artist}
                 song_name={o.song_name}
                 onClick={()=>{
-                    setOpen(!open)
+                    setOpen(true)
                     setID(o.id)
                     console.log(postId)
                 }}
@@ -59,23 +59,30 @@ const ManagePost = () => {
                 
             </div>
             
-            {open ? (
+            <CSSTransition in={open}
+        timeout={300}
+        classNames="delete"
+        unmountOnExit
+        onExited={() => setOpen(false)}
+        >
             <div className='delete_post'>
                 <h2>Delete Post</h2>
                 <p>Are you sure?</p>
+                
                 <div className="delete_options">
                     <p onClick={() => {
                         // DeletePost(postId)
-                        setOpen(!open)
+                        setOpen(false)
                         }}>Cancel</p>
                     <p style={{color:'red', marginLeft:'70px'}} onClick={() => {
                         DeletePost(postId) 
-                        setOpen(!open)
+                        // setOpen(!open)
                     }}
                         >Delete</p>
                 </div>
             </div>
-            ) : null }   
+            </CSSTransition>
+            
 
             <div className="Nav">
                 <NavBar select={2}/>
