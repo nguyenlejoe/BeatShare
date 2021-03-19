@@ -99,6 +99,7 @@ const Home = () => {
                             LikePost(o.id)
                         }
                     }}
+                    userId={o.poster_id}
                     userProfileImg
                     user_name={o.user_name}
                     song_name={o.song_name}
