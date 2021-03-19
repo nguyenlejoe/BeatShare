@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import UserAvatar from '../UserAvatar';
 
 const TitleCont = styled.div`
     width: 100%;
@@ -10,6 +11,8 @@ const TitleCont = styled.div`
 
 const Title = styled.div`
 font-size:16px;
+height:20px;
+
 `
 
 const Avatar = styled.div`
@@ -25,11 +28,15 @@ const Avatar = styled.div`
     background-repeat:no-repeat;
 `
 
-const PostTitle = ({user, songName, songArtist, userProfileImage}) => {
+const PostTitle = ({user, songName, songArtist, userProfileImage, id}) => {
     return (
         <TitleCont>
-            <Avatar bgimg={userProfileImage}/>
-            <Title>{user} posted about <b>{songName}</b> by <b>{songArtist}</b></Title>
+            <UserAvatar 
+            username = {user}
+            id = {id}
+            />
+            {/* <Avatar bgimg={userProfileImage}/> */}
+            <Title>posted about <b>{songName}</b> by <b>{songArtist}</b></Title>
         </TitleCont>
     );
 }

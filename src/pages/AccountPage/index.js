@@ -21,16 +21,16 @@ const Account = () => {
     const location = useLocation();
 
 
-    // const CheckStorage = async()=>{
-    //     var resp = await axios.get("http://localhost:8080/api/authorize")
-    //     console.log(resp.data);
-    //         if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
-    //             console.log("Good token")
-    //         }else{
-    //             history.push("/LoginPage");
-    //             console.log("Bad token")
-    //         }
-    // }   
+    const CheckStorage = async()=>{
+        var resp = await axios.get("http://localhost:8080/api/authorize")
+        console.log(resp.data);
+            if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
+                console.log("Good token")
+            }else{
+                history.push("/LoginPage");
+                console.log("Bad token")
+            }
+    }   
 
 
 
@@ -64,6 +64,7 @@ const Account = () => {
 
 
     useEffect(()=>{
+        CheckStorage()
         GetOtheruser()
         GetUser()
         GetPosts()
