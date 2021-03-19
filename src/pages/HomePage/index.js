@@ -12,8 +12,7 @@ const Home = () => {
     const params = useParams();
     const [posts, setPosts] = useState([])
     const [myLikes, setLikes] = useState([])
-    
-    
+
     // Check browser for token
     const CheckStorage = async()=>{
         var resp = await axios.get("http://localhost:8080/api/authorize")
@@ -64,17 +63,17 @@ const Home = () => {
         AllPosts()
     },[])
 
-    useEffect(()=>{
-        MyLikes()
-    },[myLikes])
+    // useEffect(()=>{
+    //     MyLikes()
+    // },[myLikes])
 
+    console.log(posts)
     
     return (
         <div className="Home">
             <h1>BeatShare</h1>
 
             <div className="Content">
-
                 {/* Display all posts */}
                 {posts && posts.map((o, i)=>{
                     // Set all current posts to unliked
