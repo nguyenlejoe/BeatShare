@@ -26,6 +26,12 @@ margin:15px;
 border-radius:7px;
 `;
 
+const PostInput = styled.input`
+display:none;
+`;
+
+const Label = styled.label``;
+
 const MakePost = ({img, submitPost, submit}) =>{
     const history = useHistory()
     const [postImage, setImage] = useState();
@@ -54,8 +60,9 @@ const MakePost = ({img, submitPost, submit}) =>{
 
     return(
         <Container onSubmit={HandlePost}>
-            <AlbumCover img={img}/>
-            <input type="file" accept="image/*" filename={postImage} onChange={e => setImage(e.target.files[0])}></input>
+            
+            <PostInput id='file-input' type="file" accept="image/*" filename={postImage} onChange={e => setImage(e.target.files[0])}></PostInput>
+            <Label for='file-input'><AlbumCover img={img}/></Label>
             <Input text="Song Title" onChange={(e)=>setSongName(e.target.value)}/>
             <Input text="Artist Name"  onChange={(e)=>setSongArtist(e.target.value)}/>
             <TextArea text="Say something about it..."  onChange={(e)=>setDesc(e.target.value)}/>

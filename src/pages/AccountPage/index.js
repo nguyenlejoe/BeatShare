@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import NavBar from "../../comps/NavBar";
 import ProfileTop from "../../comps/ProfileTop"
-import MenuBtn from '../../imgs/menuBtn.svg';
+import MenuButton from '../../comps/MenuButton';
 import ProfileMenu from '../../comps/ProfileMenu';
 import ProfilePost from '../../comps/ProfilePost';
 import {CSSTransition} from 'react-transition-group';
@@ -77,7 +77,7 @@ const Account = () => {
         <div className="Profile_Main">
 
             <div className="menubtn">
-                <img src={MenuBtn} onClick={()=> setShow(!show)}/>
+                <MenuButton onClick={()=> setShow(!show)}/>
             </div>
 
             <CSSTransition in={show}
