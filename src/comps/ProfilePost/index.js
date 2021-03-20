@@ -11,18 +11,17 @@ height:180px;
 margin:10px;
 display:grid;
 grid-template-columns:150px 150px;
-align-items:center;
+/* align-items:center; */
 margin-left:25%;
 margin-right:50%;
-padding-bottom:250px;
+padding-bottom:25px;
 `
 
 const PostCont = styled.div`
 `;
 
 const SinglePost = styled.div`
-display:flex;
-flex-direction:column;
+display:inline;
 `;
 
 const Info = styled.p`
@@ -67,11 +66,11 @@ let fakeProfileposts = [
 
 const ProfilePost = ({posts, display, onClick, onDelete, img_url, song_name, song_artist}) => {
     return(
-        <Container>
+        <Container onClick={onClick}>
             
         
-        <PostCont> 
-            <Delete display={display} onClick={onClick}>x</Delete>
+        
+            <Delete display={display} >x</Delete>
             <SinglePost>
                 <PostImg width="150px" height="150px" img={img_url} borderRadius="7px"/>
                 <SongName songName={song_name}></SongName>
@@ -79,7 +78,7 @@ const ProfilePost = ({posts, display, onClick, onDelete, img_url, song_name, son
             </SinglePost>
 
             
-            </PostCont>
+            
 
         </Container>
     )

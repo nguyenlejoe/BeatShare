@@ -3,6 +3,7 @@ import axios from 'axios';
 import {useParams, useHistory} from 'react-router-dom';
 import Post from '../../comps/Post';
 import NavBar from "../../comps/NavBar";
+import { motion } from 'framer-motion';
 import "../../App.scss";
 
 
@@ -72,7 +73,22 @@ const Home = () => {
     
     return (
         <div className="Home">
-            <h1>BeatShare</h1>
+            <motion.div initial='hidden' animate='visible' variants={{
+                hidden:{
+                    scale:.8,
+                    opacity:0
+                },
+                visible:{
+                    scale:1,
+                    opacity:1,
+                    transiton:{
+                        delay:.3
+                    }
+                }
+            }}> 
+                <h1>BeatShare</h1>
+            </motion.div>
+           
  
             <div className="Content">
                 {/* Display all posts */}

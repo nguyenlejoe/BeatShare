@@ -1,7 +1,27 @@
 .manage_posts{
-    display: grid;
-    grid-template-columns: 185px 185px;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  margin-right: 50px;
+  padding-bottom: 80px;
 }
+
+.delete-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .delete-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .delete-exit {
+    opacity: 1;
+  }
+  .delete-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+  }
 
 .delete_post{
     width: 100%;
@@ -11,6 +31,8 @@
     text-align: center;
     box-shadow:  4px 12px rgba(0, 0, 0, 0.51), -2px -2px 12px rgba(255, 255, 255, 0.19), 0px 0px 22px 5px rgba(0, 0, 0, 0.19), inset 0px 1px 10px rgba(255, 255, 255, 0.2);
     display: inline;
+    position: fixed;
+    bottom: 0;
 }
 
 .delete_options{

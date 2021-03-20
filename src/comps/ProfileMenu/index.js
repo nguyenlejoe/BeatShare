@@ -8,9 +8,8 @@ const Container = styled.div`
 display:flex;
 flex-direction:column;
 padding:5px;
-height:130px;
-width:165px;
-z-index:1;
+height:100%;
+width:345px;
 background-color:#171717;
 border-radius:7px;
 color:white;
@@ -18,6 +17,7 @@ color:white;
 
 const Option = styled.div`
 padding:10px;
+text-align:center;
 /* &:hover{
     background-color:#7209B7;
     transition: background-color, 0.5s;
@@ -25,7 +25,7 @@ padding:10px;
 `;
 
 const Line = styled.div`
-width: 160px;
+width: 340px;
 height: 1px;
 background-color: #282828;
 `;
