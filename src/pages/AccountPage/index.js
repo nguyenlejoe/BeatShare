@@ -97,6 +97,7 @@ const Account = () => {
                 favourite_artist={user.favourite_artist}
                 favourite_song={user.favourite_song}
                 user_bio={user.user_bio}
+                img={user.profile_picture}
             />
         </div>
 

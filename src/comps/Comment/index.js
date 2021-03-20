@@ -34,6 +34,7 @@ const Comment = ({comments}) => {
                 <UserAvatar
                     id={o.id}
                     username={o.user_name}
+                    img={o.profile_picture}
                 />
                 <CommentBox> {o.message}</CommentBox>
             </CommentCont>

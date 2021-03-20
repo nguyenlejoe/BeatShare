@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import cameraIcon from "../../imgs/camera.svg";
 
-const Cont = styled.div`
+const Cont = styled.img`
 display:flex;
 width:${props=>props.width ? props.width : '150px'};
 height:${props=>props.height ? props.height : '150px'};
@@ -18,11 +18,11 @@ width:${props=>props.width ? props.width : 'auto'};
 height:${props=>props.height ? props.height : 'auto'};
 `;
 
-const PFP = ({height, width}) =>{
+const PFP = ({height, width, img}) =>{
 
     return(
-        <Cont height={height} width={width}>
-           <Icon src={cameraIcon} />
+        <Cont height={height} width={width} src={img}>
+           {/* <Icon src={cameraIcon} /> */}
         </Cont>
     );
 }

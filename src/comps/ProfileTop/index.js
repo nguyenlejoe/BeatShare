@@ -85,13 +85,13 @@ const InfoSmall = styled.p`
     font-size: 12px;
 `;
 
-const ProfileTop = ({user_name, user_bio, favourite_artist, favourite_song }) => {
+const ProfileTop = ({user_name, user_bio, favourite_artist, favourite_song ,img}) => {
     
     return (
         <ProfileTopBox>
             <TopHalf>
             <PfpButton>
-                <PFP height='90px' width='90px'/>
+                <PFP height='90px' width='90px' img={img}/>
             </PfpButton>
             <UserDesc>
                <User>{user_name}</User>

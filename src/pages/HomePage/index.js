@@ -12,6 +12,7 @@ const Home = () => {
     const params = useParams();
     const [posts, setPosts] = useState([])
     const [myLikes, setLikes] = useState([])
+    const [image, setImg] = useState()
 
     // Check browser for token
     const CheckStorage = async()=>{
@@ -72,7 +73,7 @@ const Home = () => {
     return (
         <div className="Home">
             <h1>BeatShare</h1>
-
+ 
             <div className="Content">
                 {/* Display all posts */}
                 {posts && posts.map((o, i)=>{
@@ -109,6 +110,7 @@ const Home = () => {
                     description={o.description}
                     number_of_likes={o.number_of_likes}
                     likeState={likes}
+                    img={o.profile_picture}
                     />
                 })}
             </div>

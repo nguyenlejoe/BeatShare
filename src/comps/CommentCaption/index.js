@@ -42,13 +42,14 @@ const BackButton = styled.img`
     top:10px;
 `
 
-const CommentCaption = ({userProfile, userName, postCaption, onClick, id}) => {
+const CommentCaption = ({userProfile, userName, postCaption, onClick, id, img}) => {
     return (
         <CaptionCont>
             <BackButton src="/backBtn.svg" onClick={onClick}></BackButton>
             <UserAvatar 
             username={userName}
             id={id}
+            img={img}
             />
             <PostCaption>
             {postCaption}
