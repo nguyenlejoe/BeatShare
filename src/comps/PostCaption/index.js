@@ -34,6 +34,7 @@ const LikeButton = styled.div`
     background-image:url(/unLikeHeart.svg);
     background-position:50% 25%;
     background-repeat:no-repeat;
+    transition:background-image,0.5s;
     
 
     

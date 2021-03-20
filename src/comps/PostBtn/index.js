@@ -13,6 +13,7 @@ align-items:center;
 justify-content:center;
 margin-bottom:20px;
 border:none;
+outline:none;
 `
 const PostBtn = ({onClick}) =>{
 
