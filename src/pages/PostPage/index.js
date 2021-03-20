@@ -52,9 +52,7 @@ const Post = () => {
                 <Link to='/HomePage'><img src={Back} /></Link>
             </div>
             <div className="Post-info">
-                <MakePost 
-
-                />
+                <MakePost />
             </div>
             <div className="Nav">
                 <NavBar select={1}/>

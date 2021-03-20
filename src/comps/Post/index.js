@@ -60,7 +60,7 @@ let fakePosts = [
 ]
 
 
-const Post = ({userId, onLike, userProfileImg,user_name,song_name,song_artist,img_url, postId, description, number_of_likes, likeState}) => {
+const Post = ({userId, img, onLike, userProfileImg,user_name,song_name,song_artist,img_url, postId, description, number_of_likes, likeState}) => {
 
 
     return (
@@ -71,6 +71,7 @@ const Post = ({userId, onLike, userProfileImg,user_name,song_name,song_artist,im
                     songName={song_name}
                     songArtist={song_artist}
                     id={userId}
+                    img={img}
                 />
                 <PostImg
                     img={img_url} 
