@@ -17,8 +17,12 @@ const LikeCont = styled.div`
 
 const CaptionCont= styled.div`
     width:68%;
+    min-height:50px;
+    max-height:300px;
     padding: 5px 0 0 15px;
 `
+
+
 
 const LikeCounter = styled.div`
     font-weight:100;
@@ -30,6 +34,7 @@ const LikeButton = styled.div`
     background-image:url(/unLikeHeart.svg);
     background-position:50% 25%;
     background-repeat:no-repeat;
+    transition:background-image,0.5s;
     
 
     

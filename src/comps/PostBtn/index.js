@@ -12,6 +12,8 @@ box-shadow: -2px -2px 12px 0px rgba(255, 255, 255, 0.5), 0px 4px 12px 2px rgba(0
 align-items:center;
 justify-content:center;
 margin-bottom:20px;
+border:none;
+outline:none;
 `
 const PostBtn = ({onClick}) =>{
 
