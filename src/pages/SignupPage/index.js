@@ -3,7 +3,7 @@ import Input from "../../comps/Input";
 import Button from '../../comps/Button';
 import {Link, useHistory} from 'react-router-dom';
 import axios from 'axios';
-
+import Back from '../../imgs/back.png';
 // Images
 import PFP from '../../comps/Pfp';
 
@@ -72,8 +72,10 @@ const SignUp = () => {
 
     return (
         <div className="Main">
+            <div className="Back">
+                <Link to='/'><img src={Back} /></Link>
+            </div>
             <div className="Top">
-           
                 <PFP />
                 <input type="file" accept="image/*" filename={img} onChange={e => setImg(e.target.files[0])}></input>
             </div>
