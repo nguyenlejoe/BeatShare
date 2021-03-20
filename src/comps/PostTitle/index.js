@@ -28,12 +28,13 @@ const Avatar = styled.div`
     background-repeat:no-repeat;
 `
 
-const PostTitle = ({user, songName, songArtist, userProfileImage, id}) => {
+const PostTitle = ({user, songName, songArtist, userProfileImage, id,img}) => {
     return (
         <TitleCont>
             <UserAvatar 
             username = {user}
             id = {id}
+            img={img}
             />
             {/* <Avatar bgimg={userProfileImage}/> */}
             <Title>posted about <b>{songName}</b> by <b>{songArtist}</b></Title>

@@ -40,11 +40,12 @@ const ViewPostComments = () => {
     },[])
 
 
-
+    console.log(post.profile_picture)
 
     return (
         <div className="PostComments">
             <CommentCaption
+                img={post.profile_picture}
                 id={post.poster_id}
                 userName={post.user_name}
                 postCaption={post.description}

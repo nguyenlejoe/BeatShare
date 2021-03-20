@@ -8,7 +8,7 @@ const Container = styled.div`
 
 `
 
-const Avatar = styled.div`
+const Avatar = styled.img`
     width: 48px;
     height: 46px;
     background: #2F2F2F;
@@ -32,7 +32,7 @@ const Caption = styled.div`
 
 `
 
-const UserAvatar = ({username, id, caption}) => {
+const UserAvatar = ({username, id, caption, img}) => {
 
     const history = useHistory()
 
@@ -40,7 +40,7 @@ const UserAvatar = ({username, id, caption}) => {
         <Container onClick={()=>{
             history.push("/user/" + id)
         }}>
-            <Avatar/>
+            <Avatar src={img} alt= " "/>
             <UserName><b>{username}</b></UserName>
             <Caption>{caption}</Caption>
             
