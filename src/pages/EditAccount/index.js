@@ -61,6 +61,7 @@ const EditAccount = () => {
         <div className="Edit_Main">
             <EditTop 
                 username={un}
+                img={img}
             />
             <div className="editboxes">
             <h3>Your Username</h3>

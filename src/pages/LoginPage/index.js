@@ -65,7 +65,7 @@ const Login = () => {
     return (
         <div className="Main">
             <div className="Back">
-                <Link to='/AccountPage'><img src={Back} /></Link>
+                <Link to='/'><img src={Back} /></Link>
             </div>
             <div className="Logo">
                 <img src={Logo}/>
@@ -74,9 +74,14 @@ const Login = () => {
 
             <div className="Login">
                 Welcome Back!
-                <Input text="Username" onChange={(e)=>setUn(e.target.value)}/>
-                <input type="password" className='pass_input' placeholder='Password' onChange={(e)=>setPass(e.target.value)}/>
-                <Button text='Login' onClick={Auth}/>
+                <div className="inputs">
+                    <input text="Username" className='pass_input' placeholder='Username'onChange={(e)=>setUn(e.target.value)}/>
+                    <input type="password" className='pass_input' placeholder='Password' onChange={(e)=>setPass(e.target.value)}/>
+                </div>
+                <div className="button">
+                    <Button text='Login' onClick={Auth}/>
+                </div>
+                
             </div>
 
 

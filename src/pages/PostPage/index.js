@@ -28,18 +28,6 @@ const Post = () => {
     
     }
 
-    // Create posts
-    // const HandlePost = async(songImg, songName, songArtist, songDesc) => {
-    //     let resp = await axios.post("http://localhost:8080/api/create_post", {
-    //         img_url: songImg,
-    //         song_name:songName,
-    //         song_artist:songArtist,
-    //         description:songDesc
-    //     })
-        
-    //     history.push("/HomePage")
-    //     console.log(resp.data)
-    // }
 
     useEffect(()=>{
         CheckStorage()
