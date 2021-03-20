@@ -101,7 +101,7 @@ const Account = () => {
         </div>
 
 
-            <div className='profile_posts'>
+            <div className='myprofile_posts'>
             {posts && posts.map(o=>
                 <ProfilePost 
                 img_url={o.img_url}
@@ -137,7 +137,7 @@ const Account = () => {
             </div>
                 
                 <div className="Nav">
-                    <NavBar select={2}/>
+                    <NavBar select={0}/>
                 </div>
             </div>
         );

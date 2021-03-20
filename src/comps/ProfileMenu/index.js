@@ -10,7 +10,6 @@ flex-direction:column;
 padding:5px;
 height:100%;
 width:345px;
-z-index:1;
 background-color:#171717;
 border-radius:7px;
 color:white;
