@@ -6,7 +6,6 @@ import axios from 'axios';
 import Back from '../../imgs/back.png'
 
 
-// Images
 import PFP from '../../comps/Pfp';
 
 import '../../App.scss';
@@ -78,8 +77,12 @@ const SignUp = () => {
                 <Link to='/'><img src={Back} /></Link>
             </div>
             <div className="Top">
+                <PFP />
+                <input type="file" accept="image/*" filename={img} onChange={e => setImg(e.target.files[0])}></input>
+
                 <input id='file-input' type="file" accept="image/*" filename={img} onChange={e => setImg(e.target.files[0])} style={{display:'none'}}></input>
                 <label for='file-input'><PFP /></label>
+
             </div>
 
         <form className="Signup" onSubmit={HandleRegister}>
