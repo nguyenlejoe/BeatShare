@@ -4,4 +4,14 @@
   color: white;
 }
 
+@import './index.css';
 @import './pages/HomePage/home.scss';
+@import './pages/LoginPage/login.scss';
+@import './pages/StartPage/start.scss';
+@import './pages/SignupPage/signup.scss';
+@import './pages/Signup-InfoPage/info.scss';
+@import './pages/PostPage/post.scss';
+@import './pages/ViewPostComments/ViewPostComments.scss';
+@import './pages/AccountPage/account.scss';
+@import './pages/EditAccount/editpage.scss';
+@import './pages/ManagePostPage/manageposts.scss';

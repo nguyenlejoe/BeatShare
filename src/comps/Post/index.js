@@ -5,27 +5,30 @@ import PostImg from '../../comps/PostImg';
 import PostCaption from '../../comps/PostCaption';
 import CommentInput from '../../comps/CommentInput';
 import Comment from '../../comps/Comment';
+import {Link} from 'react-router-dom';
+import axios from 'axios';
 
-const Container = styled.div`
-    width:100%;
-`
 
 const PostCont = styled.div`
     width:100%;
     display:flex;
     flex-direction:column;
-    margin-top:5%;
+    margin-top:5px;
 
     hr{
         width:90%;
         border: 1px solid rgba(255, 255, 255, 0.09);
     }
+
+    
 `
 
 const AllComments = styled.div`
-    margin:2% 0 2% 5%;
+    margin:4% 0 1% 7%;
+    font-size:14px;
+    color: blue;
 `
-
+// Default test posts
 let fakePosts = [
     {
         id:1,
@@ -60,31 +63,37 @@ let fakePosts = [
 ]
 
 
-const Post = ({posts}) => {
+const Post = ({userId, img, onLike, userProfileImg,user_name,song_name,song_artist,img_url, postId, description, number_of_likes, likeState}) => {
 
 
     return (
-        <Container>
-            {posts && posts.map(o=> 
             <PostCont>
                 <PostTitle
-                    userProfileImage=""
-                    user={o.user_name}
-                    songName={o.songName}
-                    songArtist={o.songArtist}
+                    userProfileImage={userProfileImg}
+                    user={user_name}
+                    songName={song_name}
+                    songArtist={song_artist}
+                    id={userId}
+                    img={img}
                 />
                 <PostImg
-                    img={o.img_url}
+                    img={img_url} 
                 />
                 <PostCaption
-                    caption={o.description}
+                    user={user_name}
+                    caption={description}
+                    numLikes={number_of_likes}
+                    onLike={onLike}
+                    likeState={likeState}
                 />
-                <CommentInput/>
                 <Comment/>
-                <AllComments>View all {o.commentCount} comments</AllComments>
+                    <AllComments>
+                        <Link style={{ textDecoration: 'none' , color: 'lightblue'}} to={{ pathname: "/Post/Comments/" + postId }}>
+                            View All Comments
+                        </Link>
+                    </AllComments>  
                 <hr/>
-            </PostCont>)}
-        </Container>
+            </PostCont>
     );
 }
 

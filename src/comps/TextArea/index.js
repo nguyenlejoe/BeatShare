@@ -7,21 +7,23 @@ const TextField = styled.textarea`
 display:flex;
 justify-content:space-between;
 background: #212121;
-box-shadow: inset -0.5px -1px 4px rgba(255, 255, 255, 0.3), inset 4px 4px 4px #000000;
+box-shadow: inset -2px -2px 7px rgba(255, 255, 255, 0.3), inset 2px 2px 4px #000000;
 border-radius: 27px;
 border-style:none;
 padding:16px;
 color:white;
-margin-top:20px;
+margin-top:10px;
 height:100px;
-width:300px;
+width:250px;
 margin-bottom:20px;
+outline:none;
+font-family:'FuturaPTBook';
 `;
 
-const TextArea = ({text}) =>{
+const TextArea = ({text, onChange}) =>{
 
     return(
-            <TextField placeholder={text}/>
+            <TextField defaultValue={text} onChange={onChange}/>
     );
 }
 

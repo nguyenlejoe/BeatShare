@@ -14,7 +14,7 @@ const InputCont = styled.div`
     display:flex;
     justify-content:space-between;
     background: #212121;
-    box-shadow: inset -2px -2px 4px rgba(255, 255, 255, 0.3), inset 4px 4px 4px #000000;
+    box-shadow: inset -2px -2px 7px rgba(255, 255, 255, 0.3), inset 2px 2px 4px #000000;
     border-radius: 27px;
     border-style:none;
     height:35px;
@@ -35,17 +35,22 @@ const InputBox = styled.input`
     background-color: transparent;
     color:white;
     width:85%;
+    font-family:'FuturaPTBook';
 `
 
 
 //unLikeHeart
-const CommentInput = ({}) => {
+const CommentInput = ({onComment}) => {
+
+    const [comment, setComment] = useState("")
 
     return (
         <CommentCont>
             <InputCont placeholder="leave a comment">
-                <InputBox type="text" placeholder="leave a comment"></InputBox>
-                <PostButton>post</PostButton>
+                <InputBox type="text" placeholder="Leave a comment..." onChange={(e)=>setComment(e.target.value)}></InputBox>
+                <PostButton onClick={()=>{
+                    onComment(comment)
+                }}>Post</PostButton>
             </InputCont>
         </CommentCont>
     );

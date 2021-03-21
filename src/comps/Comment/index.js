@@ -1,10 +1,17 @@
 import React, {useState} from 'react';
 import styled, {css} from 'styled-components';
+import UserAvatar from '../../comps/UserAvatar';
+
+const Container = styled.div`
+width: 100%;
+
+`
 
 const CommentCont = styled.div`
     width: 100%;
     display:flex;
     justify-content:center;
+    align-items:center;
     margin: 4% 0 2% 0;
 `;
 
@@ -14,16 +21,25 @@ const UserCont = styled.div`
 
 const CommentBox = styled.div`
     width:70%;
+    margin-top:3px;
 `
 
 
-const Comment = ({userName, userComment}) => {
+const Comment = ({comments}) => {
 
     return (
-        <CommentCont>
-            <UserCont><b>{userName}</b></UserCont>
-            <CommentBox> {userComment}</CommentBox>
-        </CommentCont>
+        <Container>
+           {comments && comments.map((o)=>
+            <CommentCont>
+                <UserAvatar
+                    id={o.id}
+                    username={o.user_name}
+                    img={o.profile_picture}
+                />
+                <CommentBox> {o.message}</CommentBox>
+            </CommentCont>
+            )} 
+        </Container>
     );
 }
 

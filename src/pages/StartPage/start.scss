@@ -1,13 +1,24 @@
-.Main{
+.Start_Main{
     background-color: #161616;
     display:flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 100px;
+    justify-content: center;
 }
 
-.Logo{
-    margin-top:150px;
-    margin-bottom:150px;
-    align-content: center;
-    text-align: center;
+.link{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+.Log_sign{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.question{
+    margin:50px;
 }

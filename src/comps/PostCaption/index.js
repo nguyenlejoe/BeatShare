@@ -11,36 +11,56 @@ const LikeCont = styled.div`
     flex-direction:column; 
     align-items:center;
     justify-content:center;
-    width:22%;
+    width:15%;
+    margin-left:20px;
 `;
 
 const CaptionCont= styled.div`
-    width:70%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width:68%;
+    min-height:50px;
+    max-height:300px;
     padding: 5px 0 0 15px;
+    margin-top: -5px;
+`
+
+const Username= styled.div`
+    display: flex;
+    position: relative;
+    font-weight: 800;
+    font-size: 17px;
+
 `
 
 const LikeCounter = styled.div`
+    font-weight:100;
+`
 
+const Caption = styled.div` 
 `
 
 const LikeButton = styled.div`
     width:40px;
     height:38px;
     background-image:url(/unLikeHeart.svg);
-    background-position:80% 50%;
+    background-position:50% 25%;
     background-repeat:no-repeat;
+    transition:background-image,0.5s;
+    
 
     
     ${props => props.active === true && css`
-        background-image:url(/likedIcon.svg);   
+        background-image:url(/likedHeart.svg);   
     `}
     
 `
 
-//unLikeHeart
-const PostCaption = ({caption, numLikes}) => {
+const PostCaption = ({caption, numLikes, onLike, likeState,user}) => {
 
-    const [liked, setLiked] = useState(false);
+    // State for liked
+    const [liked, setLiked] = useState(likeState);
 
     return (
         <PostCont>
@@ -51,10 +71,18 @@ const PostCaption = ({caption, numLikes}) => {
                     }else{
                         setLiked(false)
                     }
+                    onLike(liked)
                 }}/>
                 <LikeCounter>{numLikes} Likes</LikeCounter>
             </LikeCont>
-            <CaptionCont>{caption}</CaptionCont>
+            <CaptionCont>
+                <Username>
+                    {user}
+                </Username>
+                <Caption>
+                    {caption}                    
+                </Caption>
+                </CaptionCont>
         </PostCont>
     );
 }

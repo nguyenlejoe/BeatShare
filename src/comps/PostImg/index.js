@@ -2,36 +2,38 @@ import React from 'react';
 import styled from 'styled-components';
 
 const ImageCont = styled.div`
-    width: 100%;
-    height: 385px;
+    width: ${props=>props.width ? props.width : '100%'};
+    height: ${props=>props.height ? props.height : '385px'};
     display:flex;
     align-items:center;
     justify-content:center;
 `;
 
-const ImageBox = styled.div`
-    width:92%;
-    height:92%;
-    background-image:url(/${props => props.postimg ? props.postimg : "null"});
-    background-size:cover;
-    background-position:center;
+const ImageBox = styled.img`
+    width:${props=>props.width ? props.width : '100%'};;
+    margin:${props=>props.margin ? props.margin : 'none'};
+    height:${props=>props.height ? props.height : '95%'};
+    background-image:url(/BeatShareLogo.svg);
     background-repeat:no-repeat;
-    background-color:black;
-
+    background-position:center;
+    background-size:contain;
+    border-radius: ${props=>props.borderRadius ? props.borderRadius : '10px'};
+    background: linear-gradient(315deg, #141414, #181818);
+    box-shadow:  -7px -7px 14px #090909,
+                 7px 7px 14px #232323;
 `;
 
 
 
-const PostImg = ({img}) => {
+const PostImg = ({img, width, height, borderRadius, boxShadow, margin}) => {
     return (
-        <ImageCont>
-            <ImageBox postimg={img}/>
+        <ImageCont width={width} height={height} >
+            <ImageBox  src={img} alt = " " borderRadius={borderRadius} boxShadow={boxShadow} margin={margin}/>
         </ImageCont>
     );
 }
 
 PostImg.defaultProps = {
-
 }
 
 export default PostImg;

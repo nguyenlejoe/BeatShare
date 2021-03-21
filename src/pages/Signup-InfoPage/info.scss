@@ -1,0 +1,17 @@
+.Main{
+    background-color: #161616;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.questions{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 330px;
+}
+
+.prompt{
+    margin-top: 10px;
+}
