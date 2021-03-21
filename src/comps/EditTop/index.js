@@ -16,7 +16,6 @@ const ProfileTopBox = styled.div`
     width: 100%;
     height: 200px;
     top: 0px;
-    margin: 0px;
 `
 
 

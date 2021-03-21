@@ -5,11 +5,21 @@ import MenuButton from '../../comps/MenuButton';
 import ProfileMenu from '../../comps/ProfileMenu';
 import ProfilePost from '../../comps/ProfilePost';
 import {CSSTransition} from 'react-transition-group';
-
-
+import { motion } from 'framer-motion';
 import {useParams, useHistory, useLocation} from 'react-router-dom';
 import axios from 'axios';
 import '../../App.scss';
+
+const pageTransition = {
+    in:{
+        opacity:1,
+        y:0
+    },
+    out:{
+        opacity:0,
+        y:-100
+    }
+}
 
 const Account = () => {
     const history = useHistory();
@@ -75,7 +85,7 @@ const Account = () => {
     if(location.pathname === "/AccountPage"){
     return (
         <div className="Profile_Main">
-
+            <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
             <div className="menubtn">
                 <MenuButton onClick={()=> setShow(!show)}/>
             </div>
@@ -101,7 +111,7 @@ const Account = () => {
             />
         </div>
 
-
+        
             <div className='myprofile_posts'>
             {posts && posts.map(o=>
                 <ProfilePost 
@@ -111,7 +121,7 @@ const Account = () => {
                 />
                 )}
             </div>
-            
+            </motion.div>
             <div className="Nav">
                 <NavBar select={2}/>
             </div>
@@ -119,7 +129,6 @@ const Account = () => {
     );}else {
         return (
             <div className="Profile_Main">
-    
                 <ProfileTop 
                     user_name={otheruser.user_name}
                     favourite_artist={otheruser.favourite_artist}

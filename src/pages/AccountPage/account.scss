@@ -1,7 +1,6 @@
 .Profile_Main{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: block;
+    margin:0 auto;
     padding-bottom: 80px;
 }
 
@@ -48,6 +47,7 @@
     top:0;
 }
 
+
 .myprofile_posts{
     display: grid;
     grid-template-columns: 150px 150px;
@@ -60,4 +60,36 @@
   grid-template-columns: 150px 150px;
   // background-color: white;
   width: 100%;
+}
+
+@media only screen and (min-width: 768px){
+  .myprofile_posts{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    // background-color: white;
+    width: 100%;
+}
+
+.profile_posts{
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px;
+  // background-color: white;
+  width: 100%;
+}
+}
+
+@media only screen and (min-width: 1024px){
+  .myprofile_posts{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;
+    // background-color: white;
+    width: 100%;
+}
+
+.profile_posts{
+  display: grid;
+  grid-template-columns: 150px 150px 150px 150px 150px 150px;
+  // background-color: white;
+  width: 100%;
+}
 }

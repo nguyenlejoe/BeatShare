@@ -14,6 +14,7 @@ justify-content:center;
 margin-bottom:20px;
 border:none;
 outline:none;
+font-family:'FuturaPTBook';
 `
 const PostBtn = ({onClick}) =>{
 

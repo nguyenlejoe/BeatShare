@@ -5,9 +5,21 @@ import PostBtn from '../../comps/PostBtn';
 import axios from 'axios';
 import '../../App.scss';
 import {Link, useHistory} from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 // Images
 import Back from '../../imgs/back.png';
+
+const pageTransition = {
+    in:{
+        opacity:1,
+        y:0
+    },
+    out:{
+        opacity:0,
+        y:-100
+    }
+}
 
 const Post = () => {
 
@@ -36,12 +48,15 @@ const Post = () => {
 
     return (
         <div className="Post_Main">
+        <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
             <div className="Back">
                 <Link to='/HomePage'><img src={Back} /></Link>
             </div>
             <div className="Post-info">
                 <MakePost />
             </div>
+
+        </motion.div>
             <div className="Nav">
                 <NavBar select={1}/>
             </div>
