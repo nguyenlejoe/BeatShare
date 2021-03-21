@@ -10,14 +10,16 @@ const ImageCont = styled.div`
 `;
 
 const ImageBox = styled.img`
-    width:${props=>props.width ? props.width : '95%'};;
+    width:${props=>props.width ? props.width : '100%'};;
     height:${props=>props.height ? props.height : '95%'};
     background-image:url(/BeatShareLogo.svg);
     background-repeat:no-repeat;
     background-position:center;
     background-size:contain;
     border-radius: ${props=>props.borderRadius ? props.borderRadius : '10px'};
-    box-shadow: ${props=>props.boxShadow?props.boxShadow:'none'};
+    background: linear-gradient(315deg, #141414, #181818);
+    box-shadow:  -7px -7px 14px #090909,
+                 7px 7px 14px #232323;
 `;
 
 

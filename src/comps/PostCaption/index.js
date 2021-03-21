@@ -16,16 +16,29 @@ const LikeCont = styled.div`
 `;
 
 const CaptionCont= styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
     width:68%;
     min-height:50px;
     max-height:300px;
     padding: 5px 0 0 15px;
+    margin-top: -5px;
 `
 
+const Username= styled.div`
+    display: flex;
+    position: relative;
+    font-weight: 800;
+    font-size: 17px;
 
+`
 
 const LikeCounter = styled.div`
     font-weight:100;
+`
+
+const Caption = styled.div` 
 `
 
 const LikeButton = styled.div`
@@ -44,7 +57,7 @@ const LikeButton = styled.div`
     
 `
 
-const PostCaption = ({caption, numLikes, onLike, likeState}) => {
+const PostCaption = ({caption, numLikes, onLike, likeState,user}) => {
 
     // State for liked
     const [liked, setLiked] = useState(likeState);
@@ -62,7 +75,14 @@ const PostCaption = ({caption, numLikes, onLike, likeState}) => {
                 }}/>
                 <LikeCounter>{numLikes} Likes</LikeCounter>
             </LikeCont>
-            <CaptionCont>{caption}</CaptionCont>
+            <CaptionCont>
+                <Username>
+                    {user}
+                </Username>
+                <Caption>
+                    {caption}                    
+                </Caption>
+                </CaptionCont>
         </PostCont>
     );
 }
