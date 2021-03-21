@@ -7,6 +7,16 @@ import { motion } from 'framer-motion';
 import "../../App.scss";
 
 
+const pageTransition = {
+    in:{
+        opacity:1,
+        y:0
+    },
+    out:{
+        opacity:0,
+        y:-100
+    }
+}
 
 const Home = () => {
     const history = useHistory();
@@ -72,22 +82,11 @@ const Home = () => {
     console.log(posts)
     
     return (
+
         <div className="Home">
-            <motion.div initial='hidden' animate='visible' variants={{
-                hidden:{
-                    scale:.8,
-                    opacity:0
-                },
-                visible:{
-                    scale:1,
-                    opacity:1,
-                    transiton:{
-                        delay:.3
-                    }
-                }
-            }}> 
+            <motion.div  className='Home' initial='out' animate='in' exit='out' variants={pageTransition}>
                 <h1>BeatShare</h1>
-            </motion.div>
+            
            
  
             <div className="Content">
@@ -130,10 +129,12 @@ const Home = () => {
                     />
                 })}
             </div>
+            </motion.div>
             <div className="Nav">
                 <NavBar select={0}/>
             </div>
       </div>
+      
 
     );
 }
