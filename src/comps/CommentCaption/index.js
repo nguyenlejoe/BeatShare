@@ -4,14 +4,14 @@ import Post from '../Post';
 import UserAvatar from '../../comps/UserAvatar';
 
 const CaptionCont = styled.div`
-width: 100%;
-height: 180px;
-background: linear-gradient(180deg, #2F2F2F 0%, #1E1E1E 100%);
-box-shadow: inset 0px 4px 12px rgba(255, 255, 255, 0.25);
-border-radius: 0px 0px 30px 30px;
-display:flex;
-justify-content:center;
-align-items:center;
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex: 1;
+    padding: 50px 0px 50px 0px;
+    background: linear-gradient(180deg, #2F2F2F 0%, #1E1E1E 100%);
+    box-shadow: inset 0px 4px 12px rgba(255, 255, 255, 0.25);
+    border-radius: 0px 0px 30px 30px;
 `
 const Avatar = styled.div`
     width: 48px;
@@ -27,11 +27,27 @@ const Avatar = styled.div`
 `
 
 const PostCaption = styled.div`
-    width:63%;
-    height:17px;
-    b{
-        margin-right:10px;
-    }
+    display: flex;
+    position: relative;
+`
+
+const User = styled.div`
+    display: flex;
+    position: relative;
+    font-weight: 800;
+    font-size: 17px;
+`
+
+const CaptionWrap = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width:68%;
+    min-height:50px;
+    max-height:300px;
+    padding: 5px 0 0 15px;
+    margin-top: -5px;
+    
 `
 
 const BackButton = styled.img`
@@ -47,13 +63,19 @@ const CommentCaption = ({userProfile, userName, postCaption, onClick, id, img}) 
         <CaptionCont>
             <BackButton src="/backBtn.svg" onClick={onClick}></BackButton>
             <UserAvatar 
-            username={userName}
             id={id}
             img={img}
             />
-            <PostCaption>
-            {postCaption}
-            </PostCaption>
+            <CaptionWrap>
+
+                <User>    
+                {userName}
+                </User>
+                <PostCaption>
+                {postCaption}
+                </PostCaption>                
+            </CaptionWrap>
+
         </CaptionCont>
     );
 }
