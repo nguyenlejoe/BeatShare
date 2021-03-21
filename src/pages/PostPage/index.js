@@ -13,11 +13,11 @@ import Back from '../../imgs/back.png';
 const pageTransition = {
     in:{
         opacity:1,
-        x:0
+        y:0
     },
     out:{
         opacity:0,
-        x:-100
+        y:-100
     }
 }
 
