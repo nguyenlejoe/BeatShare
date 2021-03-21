@@ -11,7 +11,7 @@ const ProfileTopBox = styled.div`
     display: flex; 
     flex-direction: column;
     width: 100%;
-    height: 335px;
+    height: 300px;
     justify-self: center;
     background:linear-gradient(145deg, #242424, #2b2b2b);
     border-radius: 0px 0px 30px 30px;
@@ -84,10 +84,12 @@ const IconInfo = styled.img`
 
 const InfoBig = styled.p`
     font-size: 16px;
+    margin: 5px;
 `;
 
 const InfoSmall = styled.p`
     font-size: 12px;
+    margin: 5px;
 `;
 
 const ProfileTop = ({user_name, user_bio, favourite_artist, favourite_song ,img}) => {
