@@ -11,7 +11,8 @@ box-shadow: 4px 4px 14px 0px rgba(0, 0, 0, 1), -2px -2px 12px 0px rgba(255, 255,
 align-items:center;
 justify-content:center;
 color:white;
-
+border:none;
+outline:none;
 `
 const Button = ({text, onClick}) =>{
 

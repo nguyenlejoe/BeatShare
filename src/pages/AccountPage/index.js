@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
 import NavBar from "../../comps/NavBar";
 import ProfileTop from "../../comps/ProfileTop"
-import MenuBtn from '../../imgs/menuBtn.svg';
+import MenuButton from '../../comps/MenuButton';
 import ProfileMenu from '../../comps/ProfileMenu';
 import ProfilePost from '../../comps/ProfilePost';
+import {CSSTransition} from 'react-transition-group';
 
 
 import {useParams, useHistory, useLocation} from 'react-router-dom';
@@ -76,17 +77,21 @@ const Account = () => {
         <div className="Profile_Main">
 
             <div className="menubtn">
-                <img src={MenuBtn} onClick={()=> setShow(!show)}/>
+                <MenuButton onClick={()=> setShow(!show)}/>
             </div>
 
-            {show ? (
+            <CSSTransition in={show}
+        timeout={300}
+        classNames="show"
+        unmountOnExit
+        onExited={() => setShow(null)}
+        >
                             <div className='profile_menu'>
             <ProfileMenu />  
             </div>
-            )          
-            : null
-        }
-
+        </CSSTransition>
+        
+        <div className='profile_top'>            
             <ProfileTop 
                 user_name={user.user_name}
                 favourite_artist={user.favourite_artist}
@@ -94,8 +99,10 @@ const Account = () => {
                 user_bio={user.user_bio}
                 img={user.profile_picture}
             />
+        </div>
 
-            <div className='profile_posts'>
+
+            <div className='myprofile_posts'>
             {posts && posts.map(o=>
                 <ProfilePost 
                 img_url={o.img_url}
@@ -132,7 +139,7 @@ const Account = () => {
             </div>
                 
                 <div className="Nav">
-                    <NavBar select={2}/>
+                    <NavBar select={0}/>
                 </div>
             </div>
         );

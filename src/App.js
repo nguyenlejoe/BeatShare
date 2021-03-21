@@ -16,6 +16,7 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import { AnimatePresence, motion } from 'framer-motion';
 import axios from 'axios';
 
 
@@ -32,26 +33,29 @@ function App() {
 
     <div className="App">
       <Router>
-        <Switch>
-        <Route path="/" exact component={Start}/>
-        <Route path="/LoginPage" exact component={Login}/>
-        <Route path="/SignupPage" exact component={SignUp}/>
-        <Route path="/Signup-InfoPage" exact component={Information}/>
-        {/* Logged In */}
-        <Route path="/HomePage" exact component={Home}/>
-        <Route exact path="/user/:id"> 
-         <Account />
-        </Route>
-        <Route exact path="/AccountPage"> 
-         <Account />
-        </Route>
-        <Route path="/ManagePostPage" exact component={ManagePost}/>
-        <Route path="/EditAccount" exact component={EditAccount}/>
-        <Route path="/PostPage" exact component={Post}/>
-        <Route exact path="/Post/Comments/:id">
-          <PostComments/>
-        </Route>
-        </Switch>
+        <AnimatePresence>
+            <Switch>
+            <Route path="/" exact component={Start}/>
+            <Route path="/LoginPage" exact component={Login}/>
+            <Route path="/SignupPage" exact component={SignUp}/>
+            <Route path="/Signup-InfoPage" exact component={Information}/>
+            {/* Logged In */}
+            <Route path="/HomePage" exact component={Home}/>
+            <Route exact path="/user/:id"> 
+            <Account />
+            </Route>
+            <Route exact path="/AccountPage"> 
+            <Account />
+            </Route>
+            <Route path="/ManagePostPage" exact component={ManagePost}/>
+            <Route path="/EditAccount" exact component={EditAccount}/>
+            <Route path="/PostPage" exact component={Post}/>
+            <Route exact path="/Post/Comments/:id">
+              <PostComments/>
+            </Route>
+            </Switch>
+        </AnimatePresence>
+
       </Router>
     </div>
   );

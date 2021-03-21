@@ -2,29 +2,62 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-top: 1px;
-    padding-bottom: 350px;
+    padding-bottom: 80px;
 }
+
+.profile_top{
+    position: static;
+    top:0;
+    width: 100%;
+}
+
+.show-enter {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  .show-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 300ms, transform 300ms;
+  }
+  .show-exit {
+    opacity: 1;
+  }
+  .show-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+  }
 
 
 .profile_menu{
     z-index:1;
     position: absolute;
     right:0;
+    top:0;
+    margin-top: 50px;
     margin-right: 10px;
-    padding-bottom: 515px;
 }
 
 .menubtn{
-    // z-index: 1;
+    z-index: 1;
     margin-right: 10px;
     position: absolute;
+    margin-top: 10px;
     right:0;
-    padding-top: 25px;
-    padding-bottom: 730px;
+    top:0;
+}
+
+.myprofile_posts{
+    display: grid;
+    grid-template-columns: 150px 150px;
+    // background-color: white;
+    width: 100%;
 }
 
 .profile_posts{
-    display: grid;
-    grid-template-columns: 150px 150px;
+  display: grid;
+  grid-template-columns: 150px 150px;
+  // background-color: white;
+  width: 100%;
 }
