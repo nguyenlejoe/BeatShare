@@ -83,7 +83,8 @@ const SignUp = () => {
 
 
                 <input id='file-input' type="file" accept="image/*" filename={img} onChange={e => setImg(e.target.files[0])} style={{display:'none'}}></input>
-                <label for='file-input'><PFP /></label>
+                <label for='file-input' style={{marginBottom:'16px'}}><PFP /></label>
+                Add a Profile Picture
 
             </div>
 

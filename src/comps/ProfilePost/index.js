@@ -78,7 +78,9 @@ const ProfilePost = ({posts, display, onClick, onDelete, img_url, song_name, son
                 img={img_url} 
                 borderRadius="7px" 
                 boxShadow='inset -8px 8px 29px #1d1d1d,
-                inset 8px -8px 29px #333333;'/>
+                inset 8px -8px 29px #333333;'
+                margin='20px'
+                />
                 <SongName songName={song_name}></SongName>
                 <SongArtist songArtist={song_artist}/>
             </SinglePost>

@@ -12,6 +12,42 @@
   padding-bottom: 80px;
 }
 
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 320px){
+  .manage_posts{
+    display: grid;
+    grid-template-columns: 150px;
+    margin-right: 50px;
+    padding-bottom: 80px;
+    // background-color: white;
+    width: 100%;
+}
+
+}
+
+@media only screen and (min-width: 768px){
+  .manage_posts{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px;
+    margin-right: 50px;
+    padding-bottom: 80px;
+    // background-color: white;
+    width: 100%;
+}
+}
+
+@media only screen and (min-width: 1024px){
+  .manage_posts{
+    display: grid;
+    grid-template-columns: 150px 150px 150px 150px 150px 150px;
+    margin-right: 50px;
+    padding-bottom: 80px;
+    // background-color: white;
+    width: 100%;
+}
+}
+
 .delete-enter {
     opacity: 0;
     transform: scale(0.9);
