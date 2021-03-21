@@ -16,7 +16,7 @@ const ProfileTopBox = styled.div`
     background:linear-gradient(145deg, #242424, #2b2b2b);
     border-radius: 0px 0px 30px 30px;
     background: #2F2F2F;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.51), -2px -2px 12px rgba(0, 0, 0, 0.19), 0px 0px 22px 5px rgba(0, 0, 0, 0.19), inset 0px 1px 10px rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.51), -2px -2px 12px rgba(0, 0, 255, 0.19), 0px 0px 22px 5px rgba(0, 0, 0, 0.19), inset 0px 1px 10px rgba(255, 255, 255, 0.2);
 `
 
 const TopHalf = styled.div`
