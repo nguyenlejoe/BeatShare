@@ -16,8 +16,7 @@ const ProfileTopBox = styled.div`
     background:linear-gradient(145deg, #242424, #2b2b2b);
     border-radius: 0px 0px 30px 30px;
     background: #2F2F2F;
-    box-shadow:  inset 12px 12px 79px #1d1d1d,
-            inset -12px -12px 79px #333333;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.51), -2px -2px 12px rgba(0, 0, 0, 0.19), 0px 0px 22px 5px rgba(0, 0, 0, 0.19), inset 0px 1px 10px rgba(255, 255, 255, 0.2);
 `
 
 const TopHalf = styled.div`
@@ -40,8 +39,8 @@ const PfpButton = styled.div`
 `
 
 const UserDesc = styled.div`
-    display: flex; 
-    flex-direction: column;
+    /* display: flex; 
+    flex-direction: column; */
     width: 60%;
     height: 200px;
     //background-color:yellow;
@@ -66,16 +65,21 @@ const UserInfo = styled.div`
 `
 
 const Favourites = styled.div`
-    display:flex;
+    //display:flex;
     position: relative;
-    flex-direction:column;
+    //flex-direction:column;
     align-items:center;
+    justify-content:center;
     padding: 0px 30px 30px 30px;
+    text-align:center;
 `;
 
 const IconInfo = styled.img`
     width:20px;
     height:27px;
+    display:block;
+    margin-left: auto;
+    margin-right: auto;
 `;
 
 const InfoBig = styled.p`

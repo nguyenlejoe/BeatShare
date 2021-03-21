@@ -72,7 +72,9 @@ const Home = () => {
     console.log(posts)
     
     return (
-        <div className="Home">
+
+        <div className="Home"
+        >
             <motion.div initial='hidden' animate='visible' variants={{
                 hidden:{
                     scale:.8,
@@ -134,6 +136,7 @@ const Home = () => {
                 <NavBar select={0}/>
             </div>
       </div>
+      
 
     );
 }

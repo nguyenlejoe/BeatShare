@@ -13,6 +13,7 @@ justify-content:center;
 color:white;
 border:none;
 outline:none;
+font-family:'FuturaPTBook';
 `
 const Button = ({text, onClick}) =>{
 
