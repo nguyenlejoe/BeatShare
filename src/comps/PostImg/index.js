@@ -11,6 +11,7 @@ const ImageCont = styled.div`
 
 const ImageBox = styled.img`
     width:${props=>props.width ? props.width : '100%'};;
+    margin:${props=>props.margin ? props.margin : 'none'};
     height:${props=>props.height ? props.height : '95%'};
     background-image:url(/BeatShareLogo.svg);
     background-repeat:no-repeat;
@@ -24,10 +25,10 @@ const ImageBox = styled.img`
 
 
 
-const PostImg = ({img, width, height, borderRadius, boxShadow}) => {
+const PostImg = ({img, width, height, borderRadius, boxShadow, margin}) => {
     return (
         <ImageCont width={width} height={height} >
-            <ImageBox  src={img} alt = " " borderRadius={borderRadius} boxShadow={boxShadow}/>
+            <ImageBox  src={img} alt = " " borderRadius={borderRadius} boxShadow={boxShadow} margin={margin}/>
         </ImageCont>
     );
 }

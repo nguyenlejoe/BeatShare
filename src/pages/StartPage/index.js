@@ -12,7 +12,7 @@ import '../../App.scss';
 
 const Start = () => {
     return (
-        <div className="Main">
+        <div className="Start_Main">
             <motion.div initial='hidden' animate='visible' variants={{
                 hidden:{
                     scale:.8,

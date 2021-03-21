@@ -63,7 +63,7 @@ const Login = () => {
     },[])
 
     return (
-        <div className="Main">
+        <div className="Login_Main">
             <div className="Back">
                 <Link to='/'><img src={Back} /></Link>
             </div>

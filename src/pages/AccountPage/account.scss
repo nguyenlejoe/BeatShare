@@ -62,6 +62,24 @@
   width: 100%;
 }
 
+// RESPONSIVE DESIGN
+
+@media only screen and (max-width: 320px){
+  .myprofile_posts{
+    display: grid;
+    grid-template-columns: 150px;
+    // background-color: white;
+    width: 100%;
+}
+
+.profile_posts{
+  display: grid;
+  grid-template-columns: 150px;
+  // background-color: white;
+  width: 100%;
+}
+}
+
 @media only screen and (min-width: 768px){
   .myprofile_posts{
     display: grid;
