@@ -125,6 +125,7 @@ const Account = () => {
                     favourite_artist={otheruser.favourite_artist}
                     favourite_song={otheruser.favourite_song}
                     user_bio={otheruser.user_bio}
+                    img={otheruser.profile_picture}
                 />
     
                 <div className='profile_posts'>
