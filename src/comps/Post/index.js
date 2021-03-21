@@ -13,17 +13,20 @@ const PostCont = styled.div`
     width:100%;
     display:flex;
     flex-direction:column;
-    margin-top:5%;
+    margin-top:5px;
 
     hr{
         width:90%;
         border: 1px solid rgba(255, 255, 255, 0.09);
     }
+
+    
 `
 
 const AllComments = styled.div`
-    margin:4% 0 1% 5%;
+    margin:4% 0 1% 7%;
     font-size:14px;
+    color: blue;
 `
 // Default test posts
 let fakePosts = [
@@ -77,6 +80,7 @@ const Post = ({userId, img, onLike, userProfileImg,user_name,song_name,song_arti
                     img={img_url} 
                 />
                 <PostCaption
+                    user={user_name}
                     caption={description}
                     numLikes={number_of_likes}
                     onLike={onLike}
@@ -84,8 +88,8 @@ const Post = ({userId, img, onLike, userProfileImg,user_name,song_name,song_arti
                 />
                 <Comment/>
                     <AllComments>
-                        <Link style={{ textDecoration: 'none' , color: 'white'}} to={{ pathname: "/Post/Comments/" + postId }}>
-                            View all comments
+                        <Link style={{ textDecoration: 'none' , color: 'lightblue'}} to={{ pathname: "/Post/Comments/" + postId }}>
+                            View All Comments
                         </Link>
                     </AllComments>  
                 <hr/>

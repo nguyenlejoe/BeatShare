@@ -64,22 +64,33 @@ const EditAccount = () => {
                 img={img}
             />
             <div className="editboxes">
-            <h3>Your Username</h3>
+
+            <div className="Labeluser">
+                <h3>Username</h3>                
+            </div>
             <Input 
                 text={un}
                 onChange={(e)=>setUn(e.target.value)}
             />
-            <h3>Who is your favourite artist?</h3>
+
+            <div className="Label">
+                <h3>Who is your favourite artist?</h3>
+            </div>
+
             <Input 
                 text={artist}
                 onChange={(e)=>setArtist(e.target.value)}
             />
-            <h3>What is your favourite song?</h3>
+            <div className="Label">
+                <h3>What is your favourite song?</h3>
+            </div>
             <Input 
                 text={song}
                 onChange={(e)=>setSong(e.target.value)}
             />
-            <h3>Tell us about your music taste</h3>
+            <div className="Label">
+                <h3>Tell us about your music taste.</h3>
+            </div>
             <TextArea 
                 text={bio}
                 onChange={(e)=>setBio(e.target.value)}
