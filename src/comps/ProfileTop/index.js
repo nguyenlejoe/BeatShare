@@ -121,10 +121,7 @@ const ProfileTop = ({user_name, user_bio, favourite_artist, favourite_song ,img}
 }
 
 ProfileTop.defaultProps = {
-    user_name:"Username",
-    user_bio:"BeatShare user bio",
-    favourite_artist:"Artist Name",
-    favourite_song:"Song Name"
+
 
 }
 
