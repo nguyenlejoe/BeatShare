@@ -19,8 +19,10 @@ background-color:#282828;
 display:flex;
 justify-content:space-between;
 align-items:center;
-border-radius:4px;
-box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #171717;
+border-radius:25px 25px 0px 0px;
+box-shadow:  inset -8px 8px 18px #171717,
+            inset 8px -8px 18px #393939;
+/* box-shadow: inset 0px 0px 2px rgba(225, 225, 225, 0.3), inset 0px 4px 0px #171717; */
 `;
 
 const Tab = styled.div`

@@ -7,8 +7,6 @@ const ImageCont = styled.div`
     display:flex;
     align-items:center;
     justify-content:center;
-    
-  
 `;
 
 const ImageBox = styled.img`
@@ -19,14 +17,15 @@ const ImageBox = styled.img`
     background-position:center;
     background-size:contain;
     border-radius: ${props=>props.borderRadius ? props.borderRadius : '10px'};
+    box-shadow: ${props=>props.boxShadow?props.boxShadow:'none'};
 `;
 
 
 
-const PostImg = ({img, width, height, borderRadius}) => {
+const PostImg = ({img, width, height, borderRadius, boxShadow}) => {
     return (
         <ImageCont width={width} height={height} >
-            <ImageBox  src={img} alt = " " borderRadius={borderRadius}/>
+            <ImageBox  src={img} alt = " " borderRadius={borderRadius} boxShadow={boxShadow}/>
         </ImageCont>
     );
 }

@@ -72,7 +72,13 @@ const ProfilePost = ({posts, display, onClick, onDelete, img_url, song_name, son
         
             <Delete display={display} >x</Delete>
             <SinglePost>
-                <PostImg width="150px" height="150px" img={img_url} borderRadius="7px"/>
+                <PostImg 
+                width="150px" 
+                height="150px" 
+                img={img_url} 
+                borderRadius="7px" 
+                boxShadow='inset -8px 8px 29px #1d1d1d,
+                inset 8px -8px 29px #333333;'/>
                 <SongName songName={song_name}></SongName>
                 <SongArtist songArtist={song_artist}/>
             </SinglePost>
