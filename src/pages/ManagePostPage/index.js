@@ -36,7 +36,7 @@ const ManagePost = () => {
 
     
     return (
-        <div className="Main">
+        <div className="Main_Manage">
 
             <div className="Back">
                 <Link to='/AccountPage'><img src={Back} /></Link>

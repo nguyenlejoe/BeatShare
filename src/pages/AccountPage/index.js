@@ -111,7 +111,7 @@ const Account = () => {
             />
         </div>
 
-
+        
             <div className='myprofile_posts'>
             {posts && posts.map(o=>
                 <ProfilePost 
