@@ -48,10 +48,11 @@ const Post = () => {
 
     return (
         <div className="Post_Main">
-        <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
-            <div className="Back">
+             <div className="Back">
                 <Link to='/HomePage'><img src={Back} /></Link>
             </div>
+        <motion.div  initial='out' animate='in' exit='out' variants={pageTransition}>
+           
             <div className="Post-info">
                 <MakePost />
             </div>
