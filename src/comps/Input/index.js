@@ -19,10 +19,10 @@ outline:none;
 font-family:'FuturaPTBook';
 `;
 
-const Input = ({text, onChange}) =>{
+const Input = ({text, onChange, ph}) =>{
 
     return(
-            <TextInput defaultValue={text} onChange={onChange}/>
+            <TextInput defaultValue={text} placeholder={ph} onChange={onChange}/>
     );
 }
 

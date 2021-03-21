@@ -45,12 +45,12 @@ const Username = styled.p`
 
 
 
-const EditTop = ({username}) => {
+const EditTop = ({username, img}) => {
     
     return (
         <ProfileTopBox>
             <PfpButton>
-                <PFP height='110px' width='110px'/>
+                <PFP height='110px' width='110px' img={img}/>
                 <p>Edit Profile Picture</p>
             </PfpButton>
             
