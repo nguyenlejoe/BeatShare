@@ -5,14 +5,16 @@ import UserAvatar from '../UserAvatar';
 const TitleCont = styled.div`
     width: 100%;
     display:flex;
-    align-items:center;
-
+    align-items:left;
+    flex-direction: column;
 `;
 
 const Title = styled.div`
-font-size:16px;
+font-size:14px;
 height:20px;
-
+margin-left: 78px;
+margin-top: -5px;
+color: gray;
 `
 
 const Avatar = styled.div`
