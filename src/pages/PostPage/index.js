@@ -28,7 +28,7 @@ const Post = () => {
     
     // Check browser for token
     const CheckStorage = async()=>{
-        var resp = await axios.get("http://localhost:8080/api/authorize")
+        var resp = await axios.get("/api/authorize")
         console.log(resp.data);
             // If there is a token, send them to the homepage
             if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){

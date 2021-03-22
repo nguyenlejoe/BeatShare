@@ -21,27 +21,6 @@ const SignUp = () => {
     const [bio, setBio] = useState("");
     const history = useHistory()
 
-    // const HandleRegister = async()=>{
-    //     const resp = await axios.post("http://localhost:8080/api/create_user",{
-    //         user_name:un,
-    //         password:pass,
-    //         profile_picture:img,
-    //         favourite_artist:artist,
-    //         favourite_song:song,
-    //         user_bio: bio
-    //     })
-        
-    //     const token = resp.data.accessToken;
-    //     const id = resp.data.user.id;
-    //     sessionStorage.setItem('token', token);
-    //     sessionStorage.setItem('id', id);
-    //     axios.defaults.headers.common['Authorization'] = "Bearer " + token
-    //     console.log(resp);
-    //     history.push("/HomePage")
-        
-       
-    // }
-
         
     const HandleRegister = async event => {
 
@@ -56,7 +35,7 @@ const SignUp = () => {
         data.append('user_bio', bio)
       
 
-        let resp = await axios.post("http://localhost:8080/api/create_user", data)
+        let resp = await axios.post("/api/create_user", data)
         console.log(resp.data)
 
         const token = resp.data.accessToken;
@@ -66,7 +45,7 @@ const SignUp = () => {
         axios.defaults.headers.common['Authorization'] = "Bearer " + token
         console.log(resp);
         history.push("/HomePage")
-        history.push("/HomePage")
+   
     }
 
 
