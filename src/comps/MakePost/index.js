@@ -90,7 +90,7 @@ const MakePost = ({img, submitPost, submit}) =>{
         data.append('song_artist', postSongArtist)
       
 
-        let resp = await axios.post("http://localhost:8080/api/create_post", data)
+        let resp = await axios.post("/api/create_post", data)
         console.log(resp.data)
         history.push("/HomePage")
     }

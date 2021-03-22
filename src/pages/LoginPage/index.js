@@ -20,7 +20,7 @@ const Login = () => {
     const [showlogin, setShow] = useState(true)
 
     const CheckStorage = async()=>{
-        var resp = await axios.get("http://localhost:8080/api/authorize")
+        var resp = await axios.get("/api/authorize")
         console.log(resp.data);
             if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
                 history.push("/HomePage");
@@ -34,7 +34,7 @@ const Login = () => {
 
     
     const Auth = async () => {
-        var resp = await axios.post("http://localhost:8080/api/login",{
+        var resp = await axios.post("/api/login",{
             user_name:un, //hello
             password:pass //pass123
         });

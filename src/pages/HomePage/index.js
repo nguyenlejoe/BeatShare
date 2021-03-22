@@ -27,7 +27,7 @@ const Home = () => {
 
     // Check browser for token
     const CheckStorage = async()=>{
-        var resp = await axios.get("http://localhost:8080/api/authorize")
+        var resp = await axios.get("/api/authorize")
         console.log(resp.data);
             // If there is a token, send them to the homepage
             if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
@@ -42,27 +42,28 @@ const Home = () => {
 
     // Grab all posts from server
     const AllPosts = async() => {
-        const resp = await axios.get("http://localhost:8080/api/posts")
+        const resp = await axios.get("/api/posts")
         setPosts(...[resp.data.posts])
+        console.log("posts", resp.data)
     }
 
     // Grab posts that the user have liked
     const MyLikes = async() => {
-        const resp = await axios.post("http://localhost:8080/api/user/likes")
+        const resp = await axios.post("/api/user/likes")
         setLikes(...[resp.data])
     }
 
 
     // Like a post
     const LikePost = async(postId) => {
-        const resp = await axios.post(`http://localhost:8080/api/like/${postId}`)
+        const resp = await axios.post(`/api/like/${postId}`)
         console.log(resp.data);
         AllPosts()
     }
     
     // Unlike a post
     const unLikePost = async(postId) => {
-        const resp = await axios.delete(`http://localhost:8080/api/like/${postId}`)
+        const resp = await axios.delete(`/api/like/${postId}`)
         console.log(resp.data);
         AllPosts()
     }
@@ -70,16 +71,13 @@ const Home = () => {
 
 
     useEffect(()=>{
+        AllPosts()
         CheckStorage()
         MyLikes()
-        AllPosts()
+        
     },[])
 
-    // useEffect(()=>{
-    //     MyLikes()
-    // },[myLikes])
 
-    console.log(posts)
     
     return (
 

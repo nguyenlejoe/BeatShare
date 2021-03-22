@@ -18,14 +18,14 @@ const ManagePost = () => {
     const [postId, setID] = useState('');
 
     const GetPosts = async() => {
-        var resp = await axios.get("http://localhost:8080/api/myposts")
+        var resp = await axios.get("/api/myposts")
         setPosts(resp.data.posts)
         console.log(posts);
     }
 
     const DeletePost = async(postId)=>{
         console.log(postId)
-        let resp = await axios.delete(`http://localhost:8080/api/posts/${postId}`)
+        let resp = await axios.delete(`/api/posts/${postId}`)
         console.log(resp.data);
         GetPosts();
     }

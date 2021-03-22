@@ -26,7 +26,7 @@ const EditAccount = () => {
 
     const GetUser = async () => {
         let id = sessionStorage.getItem("id")
-        let resp = await axios.get(`http://localhost:8080/api/user/${id}`, {           
+        let resp = await axios.get(`/api/user/${id}`, {           
         })
         setUser(resp.data[0])
         setUn(resp.data[0].user_name)
@@ -42,7 +42,7 @@ const EditAccount = () => {
     }
 
     const EditUser = async () => {
-        let resp = await axios.patch(`http://localhost:8080/api/user/edit`, {
+        let resp = await axios.patch(`/api/user/edit`, {
             user_name:un,
             profile_picture:img,
             favourite_artist:artist,

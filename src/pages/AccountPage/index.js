@@ -33,7 +33,7 @@ const Account = () => {
 
 
     const CheckStorage = async()=>{
-        var resp = await axios.get("http://localhost:8080/api/authorize")
+        var resp = await axios.get("/api/authorize")
         console.log(resp.data);
             if(resp.data !== "no token sent to server" && resp.data !== "Invalid Token"){
                 console.log("Good token")
@@ -46,28 +46,28 @@ const Account = () => {
 
 
     const GetOtheruser = async () => {
-        let resp = await axios.get(`http://localhost:8080/api/user/${params.id}`)
+        let resp = await axios.get(`/api/user/${params.id}`)
         setOtherUser(resp.data[0])
         console.log(resp);
     }
 
     const GetUser = async () => {
         let id = sessionStorage.getItem("id");
-        let resp = await axios.get(`http://localhost:8080/api/user/${id}`)
+        let resp = await axios.get(`/api/user/${id}`)
         setUser(resp.data[0])
         console.log(resp);
     }
 
 
     const GetPosts = async() => {
-        var resp = await axios.get("http://localhost:8080/api/myposts")
+        var resp = await axios.get("/api/myposts")
         setPosts(resp.data.posts)
         console.log(posts);
     }
 
     
     const GetOtherPosts = async() => {
-        var resp = await axios.get(`http://localhost:8080/api/userPosts/${params.id}`)
+        var resp = await axios.get(`/api/userPosts/${params.id}`)
         setotherPosts(resp.data.posts)
         console.log(posts);
     }
